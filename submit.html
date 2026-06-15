@@ -633,17 +633,13 @@
       };
 
       try {
-        const res = await fetch(
-          `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(TABLE_NAME)}`,
-          {
-            method: 'POST',
-            headers: {
-              'Authorization': `Bearer ${AIRTABLE_TOKEN}`,
-              'Content-Type':  'application/json'
-            },
-            body: JSON.stringify(payload)
-          }
-        );
+        const res = await fetch('/api/submit-report', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(payload)
+});
 
         if (!res.ok) throw new Error('Airtable error');
 
