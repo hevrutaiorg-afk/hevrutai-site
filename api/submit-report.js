@@ -22,7 +22,7 @@ export default async function handler(req, res) {
           Authorization: `Bearer ${AIRTABLE_TOKEN}`,
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(payload)
+body: JSON.stringify({ records: [payload] })
       }
     );
 const data = await airtableRes.json();
