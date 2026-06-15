@@ -7,16 +7,28 @@ export default async function handler(req, res) {
   const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
 
   if (!AIRTABLE_TOKEN || !AIRTABLE_BASE_ID) {
-    return res.status(422).json({ 
-      error: "Missing env vars",
-      hasToken: !!AIRTABLE_TOKEN,
-      hasBaseId: !!AIRTABLE_BASE_ID
-    });
+    return res.status(500).json({ error: "Missing environment variables" });
   }
 
-  return res.status(200).json({ 
-    success: true,
-    hasToken: true,
-    hasBaseId: true
-  });
+  const body = req.body;
+
+  const airtableRes = await fetch(
+    `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/Submissions`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${AIRTABLE_TOKEN}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(body)
+    }
+  );
+
+  const data = await airtableRes.json();
+
+  if (!airtableRes.ok) {
+    return res.status(airtableRes.status).json({ error: data });
+  }
+
+  return res.status(200).json({ success: true });
 }
