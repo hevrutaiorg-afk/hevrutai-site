@@ -20,7 +20,7 @@ export default async function handler(req, res) {
         Authorization: `Bearer ${AIRTABLE_TOKEN}`,
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(body)
+body: JSON.stringify({ fields: body.fields })
     }
   );
 
