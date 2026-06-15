@@ -27,7 +27,8 @@ export default async function handler(req, res) {
     );
 
     const data = await airtableRes.json();
-
+const data = await airtableRes.json();
+console.log('Airtable response:', JSON.stringify(data));
     if (!airtableRes.ok) {
       return res.status(airtableRes.status).json({
         error: "Airtable error",
