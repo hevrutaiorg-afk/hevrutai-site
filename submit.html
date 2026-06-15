@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit a Report — HevrutAI Truth Bounty System</title>
+  <meta name="description" content="See something. Submit it. Every verified report earns points and becomes a permanent node in the living record." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── TOKENS ── */
+    :root {
+      --bg:       #0F0F0F;
+      --surface:  #1A1A1A;
+      --border:   #2A2A2A;
+      --text:     #E8E4DC;
+      --muted:    #888880;
+      --teal:     #00C9B1;
+      --gold:     #C8974A;
+      --mono:     'IBM Plex Mono', monospace;
+      --serif:    'Cormorant Garamond', serif;
+      --display:  'Cinzel', serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 13px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    .site-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border: 2px solid var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: var(--teal);
+      font-family: var(--display);
+      flex-shrink: 0;
+    }
+
+    .logo-text { font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text); }
+    .logo-sub  { font-size: 9px;  letter-spacing: 0.2em;  text-transform: uppercase; color: var(--muted); }
+
+    .status-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+
+    .status-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--teal);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    /* ── NAV ── */
+    .site-nav {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .site-nav a {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .site-nav a:hover { color: var(--teal); }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 56px 24px 100px;
+    }
+
+    /* ── TYPOGRAPHY ── */
+    .eyebrow {
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 14px;
+    }
+
+    .page-title {
+      font-family: var(--display);
+      font-size: clamp(26px, 5vw, 36px);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+      margin-bottom: 14px;
+    }
+
+    .page-subtitle {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-style: italic;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 44px;
+    }
+
+    /* ── POINTS BOX ── */
+    .points-box {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: var(--surface);
+      border: 1px solid var(--teal);
+      padding: 20px 24px;
+      margin-bottom: 40px;
+    }
+
+    .points-number {
+      font-family: var(--display);
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--teal);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .points-label {
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 6px;
+    }
+
+    .points-desc {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── DIVIDERS ── */
+    .stage-divider {
+      position: relative;
+      height: 1px;
+      background: var(--border);
+      margin: 36px 0 28px;
+    }
+
+    .stage-label {
+      position: absolute;
+      top: -8px;
+      left: 0;
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: var(--bg);
+      padding-right: 14px;
+    }
+
+    /* ── FIELDS ── */
+    .field { margin-bottom: 26px; }
+
+    label {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    label .req { color: var(--teal); margin-left: 4px; }
+    label .opt { color: var(--muted); font-size: 8px; margin-left: 6px; letter-spacing: 0.1em; }
+
+    input[type="url"],
+    input[type="text"],
+    textarea,
+    select {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 13px;
+      padding: 12px 16px;
+      outline: none;
+      transition: border-color 0.2s;
+      appearance: none;
+    }
+
+    textarea {
+      font-family: var(--serif);
+      font-size: 16px;
+      resize: vertical;
+      min-height: 110px;
+      line-height: 1.6;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--teal);
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #555550;
+    }
+
+    .select-wrap { position: relative; }
+
+    .select-wrap::after {
+      content: '▾';
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--teal);
+      pointer-events: none;
+      font-size: 12px;
+    }
+
+    select option { background: #1A1A1A; }
+
+    .hint {
+      font-size: 10px;
+      color: var(--muted);
+      margin-top: 7px;
+      line-height: 1.5;
+      letter-spacing: 0.02em;
+    }
+
+    .char-count { color: var(--muted); }
+
+    /* ── SUBMIT ── */
+    .submit-area { margin-top: 44px; }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--teal);
+      color: var(--bg);
+      border: none;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 18px 24px;
+      cursor: pointer;
+      transition: opacity 0.2s, background 0.2s;
+    }
+
+    .submit-btn:hover { opacity: 0.88; }
+    .submit-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+    .submit-note {
+      text-align: center;
+      font-size: 10px;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    /* ── SUCCESS ── */
+    #success-screen {
+      display: none;
+      text-align: center;
+      padding: 60px 0;
+    }
+
+    .success-icon {
+      width: 64px; height: 64px;
+      border: 2px solid var(--teal);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 26px;
+      color: var(--teal);
+    }
+
+    .success-title {
+      font-family: var(--display);
+      font-size: 24px;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .success-sub {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-style: italic;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .case-id-box {
+      display: inline-block;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 10px 24px;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+
+    .earned-box {
+      display: inline-block;
+      background: var(--surface);
+      border: 1px solid var(--teal);
+      padding: 18px 32px;
+      margin-bottom: 32px;
+    }
+
+    .tapestry-note {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-style: italic;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 440px;
+      margin: 0 auto 36px;
+    }
+
+    .btn-ghost {
+      display: inline-block;
+      background: transparent;
+      border: 1px solid var(--teal);
+      color: var(--teal);
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 13px 28px;
+      cursor: pointer;
+      transition: background 0.2s;
+      text-decoration: none;
+    }
+
+    .btn-ghost:hover { background: rgba(0,201,177,0.08); }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      margin-top: 64px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      line-height: 2.2;
+    }
+
+    .site-footer a { color: var(--muted); text-decoration: none; }
+    .site-footer a:hover { color: var(--teal); }
+    .site-footer .tagline { color: var(--teal); font-style: italic; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .site-header { padding: 16px 20px; }
+      .site-nav { display: none; }
+      main { padding: 40px 20px 80px; }
+      .points-box { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="/" class="logo">
+      <div class="logo-mark">ℵ</div>
+      <div>
+        <div class="logo-text">HevrutAI</div>
+        <div class="logo-sub">Truth Bounty System</div>
+      </div>
+    </a>
+    <nav class="site-nav">
+      <a href="/">Home</a>
+      <a href="https://hevrutai.lovable.app" target="_blank">Case Library</a>
+      <a href="/#learn">Learn</a>
+      <a href="/#about">About</a>
+    </nav>
+    <div class="status-badge">
+      <div class="status-dot"></div>
+      Accepting Reports
+    </div>
+  </header>
+
+  <!-- MAIN FORM -->
+  <main>
+    <div id="form-section">
+
+      <div class="eyebrow">Opposition Library · Submission Portal</div>
+      <h1 class="page-title">See it. Submit it.<br>The record grows.</h1>
+      <p class="page-subtitle">
+        Every verified report becomes a permanent node in the living tapestry of documented truth.
+        You are not just reporting. You are defending the chain.
+      </p>
+
+      <!-- POINTS -->
+      <div class="points-box">
+        <div class="points-number">50</div>
+        <div>
+          <div class="points-label">Points per verified submission</div>
+          <div class="points-desc">
+            Points are awarded after the Machloket Protocol confirms your report.
+            Unverified submissions earn nothing. Verified submissions enter the
+            Opposition Library permanently.
+          </div>
+        </div>
+      </div>
+
+      <form id="bounty-form" novalidate>
+
+        <!-- STAGE I -->
+        <div class="stage-divider"><span class="stage-label">Stage I — The Evidence</span></div>
+
+        <div class="field">
+          <label for="url">URL or Source Link <span class="req">*</span></label>
+          <input type="url" id="url" name="url" placeholder="https://" required />
+          <div class="hint">Direct link to the post, article, video, or document. Screenshot URL acceptable if original is deleted.</div>
+        </div>
+
+        <div class="field">
+          <label for="platform">Platform or Publication <span class="req">*</span></label>
+          <div class="select-wrap">
+            <select id="platform" name="platform" required>
+              <option value="">Select platform —</option>
+              <option>Twitter / X</option>
+              <option>Facebook</option>
+              <option>Instagram</option>
+              <option>TikTok</option>
+              <option>YouTube</option>
+              <option>Telegram</option>
+              <option>Reddit</option>
+              <option>News Article</option>
+              <option>Academic Publication</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- STAGE II -->
+        <div class="stage-divider"><span class="stage-label">Stage II — Trope Identification</span></div>
+
+        <div class="field">
+          <label for="trope">Trope Category <span class="req">*</span></label>
+          <div class="select-wrap">
+            <select id="trope" name="trope" required>
+              <option value="">Identify the trope —</option>
+              <option>Blood Libel</option>
+              <option>Dual Loyalty / Fifth Column</option>
+              <option>Holocaust Inversion or Denial</option>
+              <option>Deicide / Collective Guilt</option>
+              <option>Jewish World Domination</option>
+              <option>Economic Exploitation Trope</option>
+              <option>Zionism = Racism / Nazism</option>
+              <option>Demographic Replacement Conspiracy</option>
+              <option>Erasure of Jewish History</option>
+              <option>Other / Unsure</option>
+            </select>
+          </div>
+          <div class="hint">Not sure? Select "Other / Unsure" — the review committee will classify it.</div>
+        </div>
+
+        <!-- STAGE III -->
+        <div class="stage-divider"><span class="stage-label">Stage III — Your Account</span></div>
+
+        <div class="field">
+          <label for="description">What did you see? <span class="req">*</span></label>
+          <textarea id="description" name="description" placeholder="Describe the content in your own words. What was said, implied, or depicted? You do not need to quote it verbatim." required></textarea>
+          <div class="hint"><span id="char-count" class="char-count">0</span> characters · minimum 20 required</div>
+        </div>
+
+        <div class="field">
+          <label for="context">Context <span class="opt">(optional but helpful)</span></label>
+          <textarea id="context" name="context" placeholder="Who posted it? What audience does it reach? Was it part of a larger thread or campaign?" style="min-height:80px;"></textarea>
+        </div>
+
+        <!-- STAGE IV -->
+        <div class="stage-divider"><span class="stage-label">Stage IV — Your Contribution</span></div>
+
+        <div class="field">
+          <label for="handle">Your Handle or Name <span class="opt">(optional)</span></label>
+          <input type="text" id="handle" name="handle" placeholder="@yourhandle or First Name" />
+          <div class="hint">Anonymous submissions accepted. Named submissions appear in the tapestry record when verified.</div>
+        </div>
+
+        <!-- SUBMIT -->
+        <div class="submit-area">
+          <button type="submit" class="submit-btn" id="submit-btn" disabled>
+            Submit to the Opposition Library →
+          </button>
+          <div class="submit-note" id="submit-note">Complete required fields to submit</div>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- SUCCESS -->
+    <div id="success-screen">
+      <div class="success-icon">✓</div>
+      <div class="success-title">Report Received</div>
+      <div class="success-sub">
+        Your fragment has entered the record.<br>
+        The Machloket Protocol will verify your submission.
+      </div>
+      <div class="case-id-box" id="case-id-display"></div>
+      <br>
+      <div class="earned-box">
+        <div class="points-label">Points Pending Verification</div>
+        <div class="points-number" style="font-size:42px; margin: 8px 0;">+50</div>
+        <div style="font-size:10px; color:var(--muted);">Awarded upon confirmed verdict</div>
+      </div>
+      <p class="tapestry-note">
+        Every verified act of truth-telling becomes a permanent node
+        in the living record. You become part of the tapestry
+        by defending it.
+      </p>
+      <button class="btn-ghost" onclick="resetForm()">Submit Another Report</button>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="site-footer">
+      <a href="/">HevrutAI™</a> · Stacy La Mell · 
+      <a href="mailto:hevrutai.org@gmail.com">hevrutai.org@gmail.com</a> · 
+      <a href="/">hevrutai.org</a><br>
+      Opposition Library · Machloket Protocol · Truth Bounty System<br>
+      <span class="tagline">links don't have to shine. they just have to hold.</span>
+    </div>
+  </main>
+
+  <script>
+    // ── CONFIG — paste your values here ──────────────────────────
+    const AIRTABLE_TOKEN   = "YOUR_TOKEN_HERE";
+
+    const AIRTABLE_BASE_ID = "YOUR_BASE_HERE";
+    const TABLE_NAME       = "Submissions";
+    // ─────────────────────────────────────────────────────────────
+
+    const generateCaseId = () => {
+      const d = new Date();
+      const pad = n => String(n).padStart(2,'0');
+      const rand = Math.floor(Math.random() * 900 + 100);
+      return `OPP-SUBMIT-${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}-${rand}`;
+    };
+
+    const caseId = generateCaseId();
+
+    // Live char count + validation
+    const descEl   = document.getElementById('description');
+    const charEl   = document.getElementById('char-count');
+    const urlEl    = document.getElementById('url');
+    const platEl   = document.getElementById('platform');
+    const tropeEl  = document.getElementById('trope');
+    const btn      = document.getElementById('submit-btn');
+    const noteEl   = document.getElementById('submit-note');
+
+    const validate = () => {
+      const ok = urlEl.value.trim() &&
+                 platEl.value &&
+                 tropeEl.value &&
+                 descEl.value.trim().length >= 20;
+      btn.disabled = !ok;
+      noteEl.style.display = ok ? 'none' : 'block';
+    };
+
+    descEl.addEventListener('input', () => {
+      charEl.textContent = descEl.value.length;
+      validate();
+    });
+
+    [urlEl, platEl, tropeEl].forEach(el => el.addEventListener('change', validate));
+    urlEl.addEventListener('input', validate);
+
+    // Form submit
+    document.getElementById('bounty-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = 'Submitting to Machloket Protocol ···';
+
+      const payload = {
+        fields: {
+          "Case ID":          caseId,
+          "URL":              urlEl.value.trim(),
+          "Platform":         platEl.value,
+          "Trope Category":   tropeEl.value,
+          "Description":      descEl.value.trim(),
+          "Context":          document.getElementById('context').value.trim(),
+          "Submitter Handle": document.getElementById('handle').value.trim(),
+          "Status":           "Pending",
+          "Points":           50,
+          "Submitted At":     new Date().toISOString()
+        }
+      };
+
+      try {
+        const res = await fetch(
+          `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(TABLE_NAME)}`,
+          {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${AIRTABLE_TOKEN}`,
+              'Content-Type':  'application/json'
+            },
+            body: JSON.stringify(payload)
+          }
+        );
+
+        if (!res.ok) throw new Error('Airtable error');
+
+        document.getElementById('form-section').style.display = 'none';
+        document.getElementById('case-id-display').textContent = 'CASE ID: ' + caseId;
+        document.getElementById('success-screen').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = 'Submit to the Opposition Library →';
+        alert('Something went wrong. Please try again or email hevrutai.org@gmail.com');
+      }
+    });
+
+    const resetForm = () => {
+      document.getElementById('bounty-form').reset();
+      charEl.textContent = '0';
+      btn.disabled = true;
+      noteEl.style.display = 'block';
+      btn.textContent = 'Submit to the Opposition Library →';
+      document.getElementById('success-screen').style.display = 'none';
+      document.getElementById('form-section').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  </script>
+</body>
+</html>
