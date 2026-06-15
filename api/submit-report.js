@@ -10,7 +10,16 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: "Missing environment variables" });
   }
 
-  const body = req.body;
+  let body;
+  try {
+    body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
+  } catch(e) {
+    return res.status(400).json({ error: "Invalid JSON" });
+  }
+
+  if (!body || !body.fields) {
+    return res.status(422).json({ error: "No fields provided", received: body });
+  }
 
   const airtableRes = await fetch(
     `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/Submissions`,
@@ -20,7 +29,7 @@ export default async function handler(req, res) {
         Authorization: `Bearer ${AIRTABLE_TOKEN}`,
         "Content-Type": "application/json"
       },
-body: JSON.stringify({ fields: body.fields })
+      body: JSON.stringify({ fields: body.fields })
     }
   );
 
