@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Submit a Report — HevrutAI Truth Bounty System</title>
-  <meta name="description" content="See something. Submit it. Every verified report earns points and becomes a permanent node in the living record." />
+  <title>Submit a Claim — HevrutAI Opposition Library</title>
+  <meta name="description" content="Submit a contested claim, AI distortion, or narrative inversion for human-supervised review. High-quality submissions enter the Opposition Library as permanent documented cases." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet" />
@@ -137,41 +137,48 @@
       font-style: italic;
       color: var(--muted);
       line-height: 1.7;
-      margin-bottom: 44px;
+      margin-bottom: 32px;
     }
 
-    /* ── POINTS BOX ── */
-    .points-box {
-      display: flex;
-      align-items: center;
-      gap: 20px;
+    /* ── HOW IT WORKS BOX ── */
+    .process-box {
       background: var(--surface);
-      border: 1px solid var(--teal);
-      padding: 20px 24px;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--teal);
+      padding: 22px 24px;
       margin-bottom: 40px;
     }
 
-    .points-number {
-      font-family: var(--display);
-      font-size: 40px;
-      font-weight: 700;
-      color: var(--teal);
-      line-height: 1;
-      flex-shrink: 0;
-    }
-
-    .points-label {
+    .process-box .box-label {
       font-size: 9px;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--teal);
-      margin-bottom: 6px;
+      margin-bottom: 14px;
     }
 
-    .points-desc {
-      font-size: 11px;
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .process-step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      font-size: 12px;
       color: var(--muted);
-      line-height: 1.6;
+      line-height: 1.5;
+    }
+
+    .step-num {
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      color: var(--teal);
+      white-space: nowrap;
+      padding-top: 2px;
+      flex-shrink: 0;
     }
 
     /* ── DIVIDERS ── */
@@ -294,6 +301,17 @@
       margin-top: 12px;
     }
 
+    .review-note {
+      margin-top: 16px;
+      padding: 14px 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      font-size: 10px;
+      color: var(--muted);
+      line-height: 1.7;
+      letter-spacing: 0.02em;
+    }
+
     /* ── SUCCESS ── */
     #success-screen {
       display: none;
@@ -340,23 +358,34 @@
       margin-bottom: 28px;
     }
 
-    .earned-box {
+    .next-steps-box {
       display: inline-block;
       background: var(--surface);
-      border: 1px solid var(--teal);
-      padding: 18px 32px;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--teal);
+      padding: 22px 28px;
       margin-bottom: 32px;
+      text-align: left;
+      max-width: 440px;
+      width: 100%;
     }
 
-    .tapestry-note {
-      font-family: var(--serif);
-      font-size: 17px;
-      font-style: italic;
-      color: var(--muted);
-      line-height: 1.8;
-      max-width: 440px;
-      margin: 0 auto 36px;
+    .next-steps-box .box-label {
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 14px;
     }
+
+    .next-steps-box p {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    .next-steps-box p:last-child { margin-bottom: 0; }
 
     .btn-ghost {
       display: inline-block;
@@ -397,7 +426,6 @@
       .site-header { padding: 16px 20px; }
       .site-nav { display: none; }
       main { padding: 40px 20px 80px; }
-      .points-box { flex-direction: column; align-items: flex-start; gap: 12px; }
     }
   </style>
 </head>
@@ -409,7 +437,7 @@
       <div class="logo-mark">ℵ</div>
       <div>
         <div class="logo-text">HevrutAI</div>
-        <div class="logo-sub">Truth Bounty System</div>
+        <div class="logo-sub">Opposition Library</div>
       </div>
     </a>
     <nav class="site-nav">
@@ -420,7 +448,7 @@
     </nav>
     <div class="status-badge">
       <div class="status-dot"></div>
-      Accepting Reports
+      Accepting Submissions
     </div>
   </header>
 
@@ -429,41 +457,53 @@
     <div id="form-section">
 
       <div class="eyebrow">Opposition Library · Submission Portal</div>
-      <h1 class="page-title">See it. Submit it.<br>The record grows.</h1>
+      <h1 class="page-title">Submit a Claim.<br>Build the Record.</h1>
       <p class="page-subtitle">
-        Every verified report becomes a permanent node in the living tapestry of documented truth.
-        You are not just reporting. You are defending the chain.
+        HevrutAI accepts submissions of contested claims, AI-generated distortions, historical inversions,
+        and narrative manipulations for human-supervised review. High-quality submissions that pass review
+        become permanent documented cases in the Opposition Library.
       </p>
 
-      <!-- POINTS -->
-      <div class="points-box">
-        <div class="points-number">50</div>
-        <div>
-          <div class="points-label">Points per verified submission</div>
-          <div class="points-desc">
-            Points are awarded after the Machloket Protocol confirms your report.
-            Unverified submissions earn nothing. Verified submissions enter the
-            Opposition Library permanently.
+      <!-- HOW IT WORKS -->
+      <div class="process-box">
+        <div class="box-label">How submissions work</div>
+        <div class="process-steps">
+          <div class="process-step">
+            <span class="step-num">01 — SUBMIT</span>
+            <span>You describe the claim, where you found it, and what makes it worth investigating.</span>
+          </div>
+          <div class="process-step">
+            <span class="step-num">02 — REVIEW</span>
+            <span>Human reviewers evaluate whether the submission warrants a full case investigation.</span>
+          </div>
+          <div class="process-step">
+            <span class="step-num">03 — INVESTIGATE</span>
+            <span>Approved cases are developed with primary sources, chronology, actor identification, and Machloket Protocol analysis.</span>
+          </div>
+          <div class="process-step">
+            <span class="step-num">04 — ARCHIVE</span>
+            <span>Verified cases enter the Opposition Library as permanent public records.</span>
           </div>
         </div>
       </div>
 
-      <form id="bounty-form" novalidate>
+      <form id="submit-form" novalidate>
 
         <!-- STAGE I -->
-        <div class="stage-divider"><span class="stage-label">Stage I — The Evidence</span></div>
+        <div class="stage-divider"><span class="stage-label">Stage I — The Source</span></div>
 
         <div class="field">
           <label for="url">URL or Source Link <span class="req">*</span></label>
           <input type="url" id="url" name="url" placeholder="https://" required />
-          <div class="hint">Direct link to the post, article, video, or document. Screenshot URL acceptable if original is deleted.</div>
+          <div class="hint">Direct link to the post, article, video, AI output, or document. Screenshot URL acceptable if original is deleted.</div>
         </div>
 
         <div class="field">
           <label for="platform">Platform or Publication <span class="req">*</span></label>
           <div class="select-wrap">
             <select id="platform" name="platform" required>
-              <option value="">Select platform —</option>
+              <option value="">Select —</option>
+              <option>AI Output (ChatGPT / Claude / Gemini / Other)</option>
               <option>Twitter / X</option>
               <option>Facebook</option>
               <option>Instagram</option>
@@ -473,28 +513,28 @@
               <option>Reddit</option>
               <option>News Article</option>
               <option>Academic Publication</option>
+              <option>Government or NGO Document</option>
               <option>Other</option>
             </select>
           </div>
         </div>
 
         <!-- STAGE II -->
-        <div class="stage-divider"><span class="stage-label">Stage II — Trope Identification</span></div>
+        <div class="stage-divider"><span class="stage-label">Stage II — Claim Type</span></div>
 
         <div class="field">
-          <label for="trope">Trope Category <span class="req">*</span></label>
+          <label for="claim-type">What kind of claim is this? <span class="req">*</span></label>
           <div class="select-wrap">
-            <select id="trope" name="trope" required>
-              <option value="">Identify the trope —</option>
-              <option>Blood Libel</option>
-              <option>Dual Loyalty / Fifth Column</option>
-              <option>Holocaust Inversion or Denial</option>
-              <option>Deicide / Collective Guilt</option>
-              <option>Jewish World Domination</option>
-              <option>Economic Exploitation Trope</option>
-              <option>Zionism = Racism / Nazism</option>
-              <option>Demographic Replacement Conspiracy</option>
-              <option>Erasure of Jewish History</option>
+            <select id="claim-type" name="claim-type" required>
+              <option value="">Select —</option>
+              <option>AI-Generated Distortion</option>
+              <option>Historical Inversion or Erasure</option>
+              <option>Antisemitic Trope or Narrative</option>
+              <option>False Equivalency</option>
+              <option>Passive Voice Laundering</option>
+              <option>Chronological Manipulation</option>
+              <option>Actor Omission or Misattribution</option>
+              <option>Source Credibility Laundering</option>
               <option>Other / Unsure</option>
             </select>
           </div>
@@ -506,22 +546,28 @@
 
         <div class="field">
           <label for="description">What did you see? <span class="req">*</span></label>
-          <textarea id="description" name="description" placeholder="Describe the content in your own words. What was said, implied, or depicted? You do not need to quote it verbatim." required></textarea>
+          <textarea id="description" name="description" placeholder="Describe the claim in your own words. What was said, implied, or depicted? What makes it worth investigating?" required></textarea>
           <div class="hint"><span id="char-count" class="char-count">0</span> characters · minimum 20 required</div>
         </div>
 
         <div class="field">
-          <label for="context">Context <span class="opt">(optional but helpful)</span></label>
-          <textarea id="context" name="context" placeholder="Who posted it? What audience does it reach? Was it part of a larger thread or campaign?" style="min-height:80px;"></textarea>
+          <label for="counter-source">Do you have a primary source that contradicts this claim? <span class="opt">(optional but valuable)</span></label>
+          <input type="url" id="counter-source" name="counter-source" placeholder="https://" />
+          <div class="hint">A link to an archived document, scholarly source, or primary record that directly contradicts the claim.</div>
+        </div>
+
+        <div class="field">
+          <label for="context">Additional context <span class="opt">(optional)</span></label>
+          <textarea id="context" name="context" placeholder="Who posted it? What audience does it reach? Is it part of a larger pattern or campaign?" style="min-height:80px;"></textarea>
         </div>
 
         <!-- STAGE IV -->
         <div class="stage-divider"><span class="stage-label">Stage IV — Your Contribution</span></div>
 
         <div class="field">
-          <label for="handle">Your Handle or Name <span class="opt">(optional)</span></label>
+          <label for="handle">Your Name or Handle <span class="opt">(optional)</span></label>
           <input type="text" id="handle" name="handle" placeholder="@yourhandle or First Name" />
-          <div class="hint">Anonymous submissions accepted. Named submissions appear in the tapestry record when verified.</div>
+          <div class="hint">Anonymous submissions are accepted. Named contributors may be recognized for verified, high-quality submissions.</div>
         </div>
 
         <!-- SUBMIT -->
@@ -530,6 +576,11 @@
             Submit to the Opposition Library →
           </button>
           <div class="submit-note" id="submit-note">Complete required fields to submit</div>
+          <div class="review-note">
+            All submissions enter a human review queue. Not every submission becomes a case —
+            reviewers evaluate source quality, investigability, and evidentiary value.
+            The tool is not the authority. The evidence is the authority.
+          </div>
         </div>
 
       </form>
@@ -538,40 +589,36 @@
     <!-- SUCCESS -->
     <div id="success-screen">
       <div class="success-icon">✓</div>
-      <div class="success-title">Report Received</div>
+      <div class="success-title">Submission Received</div>
       <div class="success-sub">
-        Your fragment has entered the record.<br>
-        The Machloket Protocol will verify your submission.
+        Your claim has entered the review queue.<br>
+        Human reviewers will evaluate it for case development.
       </div>
       <div class="case-id-box" id="case-id-display"></div>
-      <br>
-      <div class="earned-box">
-        <div class="points-label">Points Pending Verification</div>
-        <div class="points-number" style="font-size:42px; margin: 8px 0;">+50</div>
-        <div style="font-size:10px; color:var(--muted);">Awarded upon confirmed verdict</div>
+      <br><br>
+      <div class="next-steps-box">
+        <div class="box-label">What happens next</div>
+        <p>Your submission will be reviewed by the HevrutAI team for source quality and investigability.</p>
+        <p>If selected for development, it will be investigated using primary sources, chronology analysis, and the full Machloket Protocol.</p>
+        <p>Approved cases enter the Opposition Library as permanent documented records.</p>
+        <p>Contributors who submit high-quality, verifiable claims may be recognized in the archive.</p>
       </div>
-      <p class="tapestry-note">
-        Every verified act of truth-telling becomes a permanent node
-        in the living record. You become part of the tapestry
-        by defending it.
-      </p>
-      <button class="btn-ghost" onclick="resetForm()">Submit Another Report</button>
+      <button class="btn-ghost" onclick="resetForm()">Submit Another Claim</button>
     </div>
 
     <!-- FOOTER -->
     <div class="site-footer">
-      <a href="/">HevrutAI™</a> · Stacy La Mell · 
-      <a href="mailto:hevrutai.org@gmail.com">hevrutai.org@gmail.com</a> · 
+      <a href="/">HevrutAI™</a> · Stacy La Mell ·
+      <a href="mailto:hevrutai.org@gmail.com">hevrutai.org@gmail.com</a> ·
       <a href="/">hevrutai.org</a><br>
-      Opposition Library · Machloket Protocol · Truth Bounty System<br>
+      Opposition Library · Machloket Protocol · Human-Supervised Verification<br>
       <span class="tagline">links don't have to shine. they just have to hold.</span>
     </div>
   </main>
 
   <script>
-    // ── CONFIG — paste your values here ──────────────────────────
+    // ── CONFIG — your existing values stay here ──────────────────
     const AIRTABLE_TOKEN   = "YOUR_TOKEN_HERE";
-
     const AIRTABLE_BASE_ID = "YOUR_BASE_HERE";
     const TABLE_NAME       = "Submissions";
     // ─────────────────────────────────────────────────────────────
@@ -585,19 +632,19 @@
 
     const caseId = generateCaseId();
 
-    // Live char count + validation
-    const descEl   = document.getElementById('description');
-    const charEl   = document.getElementById('char-count');
-    const urlEl    = document.getElementById('url');
-    const platEl   = document.getElementById('platform');
-    const tropeEl  = document.getElementById('trope');
-    const btn      = document.getElementById('submit-btn');
-    const noteEl   = document.getElementById('submit-note');
+    // Field references
+    const descEl          = document.getElementById('description');
+    const charEl          = document.getElementById('char-count');
+    const urlEl           = document.getElementById('url');
+    const platEl          = document.getElementById('platform');
+    const claimTypeEl     = document.getElementById('claim-type');
+    const btn             = document.getElementById('submit-btn');
+    const noteEl          = document.getElementById('submit-note');
 
     const validate = () => {
       const ok = urlEl.value.trim() &&
                  platEl.value &&
-                 tropeEl.value &&
+                 claimTypeEl.value &&
                  descEl.value.trim().length >= 20;
       btn.disabled = !ok;
       noteEl.style.display = ok ? 'none' : 'block';
@@ -608,38 +655,42 @@
       validate();
     });
 
-    [urlEl, platEl, tropeEl].forEach(el => el.addEventListener('change', validate));
+    [urlEl, platEl, claimTypeEl].forEach(el => el.addEventListener('change', validate));
     urlEl.addEventListener('input', validate);
 
     // Form submit
-    document.getElementById('bounty-form').addEventListener('submit', async (e) => {
+    document.getElementById('submit-form').addEventListener('submit', async (e) => {
       e.preventDefault();
       btn.disabled = true;
-      btn.textContent = 'Submitting to Machloket Protocol ···';
+      btn.textContent = 'Submitting ···';
 
       const payload = {
         fields: {
           "Case ID":          caseId,
           "URL":              urlEl.value.trim(),
           "Platform":         platEl.value,
-          "Trope Category":   tropeEl.value,
+          "Claim Type":       claimTypeEl.value,
           "Description":      descEl.value.trim(),
+          "Counter Source":   document.getElementById('counter-source').value.trim(),
           "Context":          document.getElementById('context').value.trim(),
           "Submitter Handle": document.getElementById('handle').value.trim(),
           "Status":           "Pending",
-          "Points":           50,
-"Submitted At": new Date().toISOString().split('T')[0]
+          "Submitted At":     new Date().toISOString()
         }
       };
 
       try {
-        const res = await fetch('/api/submit-report', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify(payload)
-});
+        const res = await fetch(
+          `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(TABLE_NAME)}`,
+          {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${AIRTABLE_TOKEN}`,
+              'Content-Type':  'application/json'
+            },
+            body: JSON.stringify(payload)
+          }
+        );
 
         if (!res.ok) throw new Error('Airtable error');
 
@@ -656,7 +707,7 @@
     });
 
     const resetForm = () => {
-      document.getElementById('bounty-form').reset();
+      document.getElementById('submit-form').reset();
       charEl.textContent = '0';
       btn.disabled = true;
       noteEl.style.display = 'block';
