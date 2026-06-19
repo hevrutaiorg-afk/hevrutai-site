@@ -20,8 +20,8 @@
   --stone-dark:    #1A1612;
   --stone-mid:     #262018;
   --stone-warm:    #352C22;
-  --stone-surface: #4A3F33;
-  --stone-muted:   #6B5C4E;
+  --stone-surface: #5C5044;
+  --stone-muted:   #8A7A6A;
   --stone-text:    #C4B49A;
   --stone-pale:    #EAE0D0;
   --teal:          #00C9B1;
@@ -110,17 +110,17 @@ body { background:var(--stone-black); color:var(--stone-text); font-family:var(-
 .page.active { display:block; }
 
 /* ── SHARED ── */
-.teal-rule { width:40px; height:1px; background:var(--teal); margin:18px 0; opacity:0.6; }
-.gold-rule  { width:40px; height:1px; background:var(--gold);  margin:18px 0; opacity:0.5; }
-.teal-rule-c { width:40px; height:1px; background:var(--teal); margin:18px auto; opacity:0.6; }
+.teal-rule { width:40px; height:1px; background:var(--teal); margin:18px 0; opacity:0.75; }
+.gold-rule  { width:40px; height:1px; background:var(--gold);  margin:18px 0; opacity:0.65; }
+.teal-rule-c { width:40px; height:1px; background:var(--teal); margin:18px auto; opacity:0.75; }
 
 .mlabel {
-  font-family:var(--mono); font-size:10px; color:var(--teal);
-  letter-spacing:0.18em; text-transform:uppercase; opacity:0.75;
+  font-family:var(--mono); font-size:12px; color:var(--teal);
+  letter-spacing:0.15em; text-transform:uppercase; opacity:0.85;
 }
 .glabel {
-  font-family:var(--mono); font-size:10px; color:var(--gold);
-  letter-spacing:0.18em; text-transform:uppercase; opacity:0.65;
+  font-family:var(--mono); font-size:12px; color:var(--gold);
+  letter-spacing:0.15em; text-transform:uppercase; opacity:0.8;
 }
 
 h1,h2,h3,h4 { font-family:var(--serif); font-weight:400; }
@@ -173,7 +173,7 @@ p.lead { font-family:var(--serif); font-size:20px; font-style:italic; color:var(
   flex-wrap:wrap;
 }
 .action-strip-text h3 { font-size:22px; margin-bottom:6px; }
-.action-strip-text p  { font-size:15px; max-width:560px; }
+.action-strip-text p  { font-size:17px; max-width:560px; }
 .action-btns { display:flex; gap:16px; flex-wrap:wrap; }
 
 /* ── HOMEPAGE SPECIFIC ── */
@@ -219,7 +219,7 @@ p.lead { font-family:var(--serif); font-size:20px; font-style:italic; color:var(
   letter-spacing:0.2em; opacity:0.55; margin-bottom:16px;
 }
 .beat-item h4 { font-size:19px; margin-bottom:10px; color:var(--stone-pale); }
-.beat-item p  { font-size:13px; line-height:1.7; }
+.beat-item p  { font-size:15px; line-height:1.7; }
 
 /* ── THREE-COL INTRO ── */
 .three-col {
@@ -235,9 +235,9 @@ p.lead { font-family:var(--serif); font-size:20px; font-style:italic; color:var(
 }
 .col-item:last-child { border-right:none; }
 .col-item:hover { background:var(--teal-faint); }
-.col-num { font-family:var(--mono); font-size:10px; color:var(--teal); letter-spacing:0.2em; opacity:0.55; margin-bottom:20px; }
+.col-num { font-family:var(--mono); font-size:12px; color:var(--teal); letter-spacing:0.18em; opacity:0.7; margin-bottom:20px; }
 .col-item h3 { font-size:22px; margin-bottom:14px; }
-.col-item p  { font-size:15px; }
+.col-item p  { font-size:17px; }
 
 /* ── TWO PATH ── */
 .two-path { display:grid; grid-template-columns:1fr 1fr; }
@@ -303,7 +303,7 @@ p.lead { font-family:var(--serif); font-size:20px; font-style:italic; color:var(
 }
 .mach-heb { font-family:var(--serif); font-size:48px; color:rgba(0,201,177,0.2); margin-bottom:8px; line-height:1; }
 .machloket-box h3 { color:var(--teal); font-size:21px; margin-bottom:14px; }
-.machloket-box p  { font-size:15px; margin-bottom:12px; }
+.machloket-box p  { font-size:17px; margin-bottom:12px; }
 .mach-verdict {
   font-family:var(--mono); font-size:10px; color:var(--teal);
   letter-spacing:0.08em; opacity:0.7; margin-top:20px;
@@ -317,17 +317,17 @@ p.lead { font-family:var(--serif); font-size:20px; font-style:italic; color:var(
   margin:0 60px 0;
   display:flex; align-items:center; gap:24px; flex-wrap:wrap;
 }
-.proto-tag { font-family:var(--mono); font-size:10px; color:var(--gold); letter-spacing:0.15em; white-space:nowrap; }
-.proto-bar p { font-size:14px; margin:0; flex:1; }
+.proto-tag { font-family:var(--mono); font-size:12px; color:var(--gold); letter-spacing:0.15em; white-space:nowrap; }
+.proto-bar p { font-size:16px; margin:0; flex:1; }
 
 .apps-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--stone-warm); }
 .app-card {
   background:var(--stone-dark); padding:36px 32px; transition:background 0.3s;
 }
 .app-card:hover { background:var(--stone-mid); }
-.app-card .a-type { font-family:var(--mono); font-size:10px; color:var(--teal); letter-spacing:0.15em; text-transform:uppercase; opacity:0.7; margin-bottom:12px; }
+.app-card .a-type { font-family:var(--mono); font-size:12px; color:var(--teal); letter-spacing:0.12em; text-transform:uppercase; opacity:0.85; margin-bottom:12px; }
 .app-card h4 { color:var(--stone-pale); margin-bottom:10px; }
-.app-card p  { font-size:14px; margin-bottom:14px; }
+.app-card p  { font-size:16px; margin-bottom:14px; }
 .app-card .a-url { font-family:var(--mono); font-size:11px; color:var(--teal); opacity:0.5; }
 
 /* ── LEARN PAGE ── */
@@ -344,23 +344,23 @@ p.lead { font-family:var(--serif); font-size:20px; font-style:italic; color:var(
 .tier-free .tier-head::before { background:var(--stone-surface); }
 .tier-head h4 { color:var(--stone-pale); font-size:19px; margin-bottom:6px; }
 .tier-price { font-family:var(--mono); font-size:12px; color:var(--teal); margin-top:6px; }
-.tier-aud { font-family:var(--mono); font-size:10px; color:var(--stone-muted); margin-top:4px; }
+.tier-aud { font-family:var(--mono); font-size:12px; color:var(--stone-muted); margin-top:4px; }
 .tier-body { padding:24px 32px; }
 .tier-body ul { list-style:none; }
-.tier-body li { font-size:14px; color:var(--stone-text); padding:8px 0 8px 18px; border-bottom:1px solid var(--stone-warm); position:relative; }
-.tier-body li::before { content:'—'; position:absolute; left:0; font-family:var(--mono); font-size:11px; color:var(--teal); opacity:0.45; }
+.tier-body li { font-size:16px; color:var(--stone-text); padding:8px 0 8px 18px; border-bottom:1px solid var(--stone-warm); position:relative; }
+.tier-body li::before { content:'—'; position:absolute; left:0; font-family:var(--mono); font-size:11px; color:var(--teal); opacity:0.65; }
 .tier-body li:last-child { border-bottom:none; }
-.chai-note { border-left:2px solid var(--gold); background:var(--gold-pale); padding:14px 20px; margin-top:28px; font-size:14px; font-style:italic; }
+.chai-note { border-left:2px solid var(--gold); background:var(--gold-pale); padding:14px 20px; margin-top:28px; font-size:16px; font-style:italic; }
 .chai-note strong { color:var(--gold); font-style:normal; }
 
 .curr-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--stone-warm); }
 .curr-card { background:var(--stone-deep); padding:36px 32px; transition:background 0.3s; }
 .curr-card:hover { background:var(--stone-dark); }
-.curr-status { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; padding:4px 10px; display:inline-block; margin-bottom:14px; }
+.curr-status { font-family:var(--mono); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; padding:4px 10px; display:inline-block; margin-bottom:14px; }
 .s-live { background:rgba(0,201,177,0.08); color:var(--teal); border:1px solid var(--teal-dim); }
 .s-soon { background:var(--gold-pale); color:var(--gold); border:1px solid var(--gold-dim); }
 .curr-card h4 { color:var(--stone-pale); margin-bottom:10px; }
-.curr-card p  { font-size:14px; margin-bottom:18px; }
+.curr-card p  { font-size:16px; margin-bottom:18px; }
 
 /* ── ABOUT PAGE ── */
 .about-grid { display:grid; grid-template-columns:1.4fr 1fr; border-top:1px solid var(--stone-warm); }
@@ -368,11 +368,11 @@ p.lead { font-family:var(--serif); font-size:20px; font-style:italic; color:var(
 .about-side { padding:72px 48px; background:var(--stone-dark); }
 .era-block { border-left:2px solid var(--stone-warm); padding:24px 28px; margin-bottom:24px; transition:border-color 0.2s; }
 .era-block:hover { border-left-color:var(--teal); }
-.era-tag { font-family:var(--mono); font-size:10px; color:var(--gold); letter-spacing:0.15em; opacity:0.65; margin-bottom:8px; }
+.era-tag { font-family:var(--mono); font-size:12px; color:var(--gold); letter-spacing:0.12em; opacity:0.8; margin-bottom:8px; }
 .era-block h4 { color:var(--stone-pale); margin-bottom:8px; }
-.era-block p  { font-size:15px; }
+.era-block p  { font-size:17px; }
 .aside-quote { font-family:var(--serif); font-size:22px; font-style:italic; color:var(--stone-pale); line-height:1.5; border-left:2px solid var(--teal); padding-left:20px; margin-bottom:10px; opacity:0.85; }
-.aside-cite { font-family:var(--mono); font-size:10px; color:var(--gold); letter-spacing:0.1em; opacity:0.6; }
+.aside-cite { font-family:var(--mono); font-size:11px; color:var(--gold); letter-spacing:0.1em; opacity:0.75; }
 
 .taglines-block { background:var(--stone-dark); border-top:1px solid var(--stone-warm); padding:72px 60px; text-align:center; }
 .tagline-row { display:flex; gap:60px; justify-content:center; margin-top:48px; flex-wrap:wrap; }
@@ -382,10 +382,10 @@ p.lead { font-family:var(--serif); font-size:20px; font-style:italic; color:var(
 .res-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--stone-warm); }
 .res-card { background:var(--stone-deep); padding:48px 44px; transition:background 0.3s; }
 .res-card:hover { background:var(--stone-dark); }
-.res-card .r-type { font-family:var(--mono); font-size:10px; color:var(--teal); letter-spacing:0.15em; text-transform:uppercase; opacity:0.7; margin-bottom:14px; }
-.free-tag { font-family:var(--mono); font-size:10px; color:var(--teal); border:1px solid var(--teal-dim); padding:3px 10px; letter-spacing:0.1em; display:inline-block; margin-bottom:12px; background:rgba(0,201,177,0.05); }
+.res-card .r-type { font-family:var(--mono); font-size:12px; color:var(--teal); letter-spacing:0.12em; text-transform:uppercase; opacity:0.85; margin-bottom:14px; }
+.free-tag { font-family:var(--mono); font-size:12px; color:var(--teal); border:1px solid var(--teal-dim); padding:3px 10px; letter-spacing:0.1em; display:inline-block; margin-bottom:12px; background:rgba(0,201,177,0.05); }
 .res-card h3 { font-size:23px; margin-bottom:10px; }
-.res-card p  { font-size:15px; margin-bottom:22px; }
+.res-card p  { font-size:17px; margin-bottom:22px; }
 
 /* ── MEMORY PAGE ── */
 .memory-hero {
@@ -426,31 +426,44 @@ p.lead { font-family:var(--serif); font-size:20px; font-style:italic; color:var(
 .mem-cap { font-family:var(--mono); font-size:11px; color:var(--stone-surface); text-align:center; max-width:260px; line-height:1.6; }
 .mem-text { padding:72px 60px; display:flex; flex-direction:column; justify-content:center; }
 .mem-text blockquote { font-family:var(--serif); font-size:28px; font-style:italic; color:var(--stone-pale); line-height:1.4; margin:20px 0 10px; }
-.mem-text cite { font-family:var(--mono); font-size:10px; color:var(--gold); letter-spacing:0.1em; opacity:0.6; }
+.mem-text cite { font-family:var(--mono); font-size:11px; color:var(--gold); letter-spacing:0.1em; opacity:0.75; }
 .mem-text p { margin-top:22px; }
 .mem-chain { font-family:var(--serif); font-size:24px; font-weight:500; color:var(--teal); margin-top:32px; padding-top:28px; border-top:1px solid var(--stone-warm); }
 .archive-bar { background:var(--stone-dark); border-top:1px solid var(--stone-warm); padding:28px 60px; display:flex; align-items:center; gap:28px; }
-.archive-tag { font-family:var(--mono); font-size:10px; color:var(--gold); letter-spacing:0.15em; white-space:nowrap; opacity:0.65; }
-.archive-bar p { font-size:14px; }
+.archive-tag { font-family:var(--mono); font-size:12px; color:var(--gold); letter-spacing:0.12em; white-space:nowrap; opacity:0.8; }
+.archive-bar p { font-size:16px; }
 
 /* ── FOOTER ── */
 .site-footer { background:var(--stone-deep); border-top:1px solid var(--stone-warm); padding:60px; }
 .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px; margin-bottom:48px; }
 .footer-brand .logo { display:block; margin-bottom:12px; font-size:15px; }
-.footer-brand p { font-size:13px; line-height:1.7; color:var(--stone-surface); }
-.footer-col h5 { font-family:var(--mono); font-size:10px; letter-spacing:0.18em; color:var(--teal); text-transform:uppercase; margin-bottom:16px; opacity:0.65; }
-.footer-col a { display:block; font-size:13px; color:var(--stone-muted); text-decoration:none; margin-bottom:10px; transition:color 0.2s; }
+.footer-brand p { font-size:15px; line-height:1.7; color:var(--stone-surface); }
+.footer-col h5 { font-family:var(--mono); font-size:12px; letter-spacing:0.15em; color:var(--teal); text-transform:uppercase; margin-bottom:16px; opacity:0.8; }
+.footer-col a { display:block; font-size:15px; color:var(--stone-muted); text-decoration:none; margin-bottom:10px; transition:color 0.2s; }
 .footer-col a:hover { color:var(--teal); }
 .footer-bottom { border-top:1px solid var(--stone-warm); padding-top:24px; display:flex; justify-content:space-between; align-items:center; }
 .footer-bottom p { font-size:12px; color:var(--stone-surface); }
-.footer-tag { font-family:var(--serif); font-style:italic; font-size:14px; color:var(--gold); opacity:0.55; }
+.footer-tag { font-family:var(--serif); font-style:italic; font-size:15px; color:var(--gold); opacity:0.7; }
+
+@media (max-width: 640px) {
+  h1 { font-size:36px; }
+  h2 { font-size:28px; }
+  h3 { font-size:22px; }
+  p  { font-size:16px; }
+  p.lead { font-size:18px; }
+  .work-intro, .about-grid { grid-template-columns:1fr; gap:40px; }
+  .offerings-grid { grid-template-columns:1fr; }
+  .dash-grid, .res-grid { grid-template-columns:1fr; }
+  section[style*="grid-template-columns:repeat(4"] { display:block; }
+  section[style*="grid-template-columns:repeat(4"] > div { margin-bottom:1px; }
+}
 </style>
 </head>
 <body>
 
 <!-- ══ SITE NAV ══ -->
 <nav class="site-nav">
-  <a href="#" class="logo" onclick="showPage('home')" style="display:flex;align-items:center;gap:0;"><img src="images/logo.png" class="nav-logo-img" alt="HevrutAI logo"><span style="font-family:var(--cinzel);font-size:17px;font-weight:500;color:var(--gold);letter-spacing:0.12em;">HevrutAI</span><span style="font-family:var(--mono);font-size:9px;color:var(--teal);letter-spacing:0.15em;margin-left:10px;opacity:0.7;">FORENSIC · FRAMEWORK</span></a>
+  <a href="#" class="logo" onclick="showPage('home')" style="display:flex;align-items:center;gap:0;"><img src="images/logo.png" class="nav-logo-img" alt="HevrutAI logo"><span style="font-family:var(--cinzel);font-size:17px;font-weight:500;color:var(--gold);letter-spacing:0.12em;">HevrutAI</span><span style="font-family:var(--mono);font-size:11px;color:var(--teal);letter-spacing:0.12em;margin-left:10px;opacity:0.8;">FORENSIC · FRAMEWORK</span></a>
   <ul class="nav-links">
     <li><a href="#" onclick="showPage('work')">The Work</a></li>
     <li><a href="#" onclick="showPage('learn')">Learn</a></li>
@@ -584,9 +597,9 @@ p.lead { font-family:var(--serif); font-size:20px; font-style:italic; color:var(
   <!-- Learn strip -->
   <div style="background:var(--stone-dark); border-top:1px solid var(--stone-warm); border-bottom:1px solid var(--stone-warm); padding:32px 60px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
     <div style="max-width:600px;">
-      <p style="font-family:var(--mono); font-size:10px; color:var(--teal); letter-spacing:0.18em; text-transform:uppercase; margin-bottom:8px;">For Communities</p>
+      <p style="font-family:var(--mono); font-size:12px; color:var(--teal); letter-spacing:0.18em; text-transform:uppercase; margin-bottom:8px;">For Communities</p>
       <p style="font-family:var(--serif); font-size:20px; color:var(--stone-pale); margin-bottom:8px; font-style:italic;">Bring HevrutAI to your organization.</p>
-      <p style="font-size:15px; margin:0;">Presentations, workshops, and curriculum for synagogues, Hillels, JCCs, and Jewish schools. The Machloket Protocol is teachable.</p>
+      <p style="font-size:17px; margin:0;">Presentations, workshops, and curriculum for synagogues, Hillels, JCCs, and Jewish schools. The Machloket Protocol is teachable.</p>
     </div>
     <a href="#" onclick="showPage('learn')" class="btn-t" style="white-space:nowrap;">See What's Available</a>
   </div>
@@ -616,7 +629,7 @@ p.lead { font-family:var(--serif); font-size:20px; font-style:italic; color:var(
       <input type="email" placeholder="your@email.com">
       <a href="#" class="btn-t" style="border-left:1px solid var(--stone-warm); padding:14px 24px;">Subscribe</a>
     </div>
-    <p style="margin-top:20px; font-family:var(--serif); font-style:italic; font-size:14px; color:var(--gold); opacity:0.45;">links don't have to shine. they just have to hold.</p>
+    <p style="margin-top:20px; font-family:var(--serif); font-style:italic; font-size:16px; color:var(--gold); opacity:0.65;">links don't have to shine. they just have to hold.</p>
   </div>
 
   <!-- Footer -->
@@ -675,7 +688,7 @@ p.lead { font-family:var(--serif); font-size:20px; font-style:italic; color:var(
       <div class="teal-rule"></div>
       <h2 style="font-size:28px; margin-bottom:18px; font-family:var(--serif);">"What is the use of your agreement?"</h2>
       <p style="font-family:var(--serif); font-size:18px; font-style:italic; color:var(--stone-pale); line-height:1.7; margin-bottom:18px; opacity:0.9;">After Resh Lakish died, Rabbi Yochanan lamented: When I would state a matter, Resh Lakish would challenge me with twenty-four objections. And when I would answer, he would raise twenty-four refutations. And by this process, the matter would be clarified. But your students only tell me: So it is. So it is. What is the use of your agreement?</p>
-      <p style="font-family:var(--mono); font-size:10px; color:var(--gold); letter-spacing:0.1em; opacity:0.6; margin-bottom:28px;">— BAVLI BAVA METZIA 84a</p>
+      <p style="font-family:var(--mono); font-size:12px; color:var(--gold); letter-spacing:0.1em; opacity:0.6; margin-bottom:28px;">— BAVLI BAVA METZIA 84a</p>
       <p style="margin-bottom:16px;">Rabbi Yochanan did not want to be told he was right. He wanted to be tested until he could prove he was right. Reish Lakish — a former gladiator who brought the same ferocity to intellectual combat that he had once brought to the arena — was not a passive partner. He was an adversary by design.</p>
       <p style="margin-bottom:16px;">When Reish Lakish died, Rabbi Yochanan lost something no brilliant replacement could restore: the friction that made truth defensible. The scholar sent to replace him agreed with everything. Rabbi Yochanan wept.</p>
       <p style="margin-bottom:36px; font-family:var(--serif); font-size:18px; font-style:italic; color:var(--teal); opacity:0.85;">The model that agrees with you is not your partner. It is your echo. HevrutAI was built to be the Reish Lakish the machine refuses to provide.</p>
@@ -686,8 +699,8 @@ p.lead { font-family:var(--serif); font-size:20px; font-style:italic; color:var(
         <div class="mach-heb">מַחֲלֹקֶת</div>
         <span class="mlabel">Machloket L'Shem Shamayim</span>
         <h3 style="color:var(--teal); font-size:19px; margin-bottom:10px;">Argument for the sake of heaven.</h3>
-        <p style="margin-top:10px; font-size:15px;">The 28-Facet Friction Protocol is named for the twenty-four objections Reish Lakish raised. Challenges do not come from the model itself — they come from the documented record of real counter-arguments, exactly as Reish Lakish's objections came from his own rigorous legal knowledge, not from deference.</p>
-        <p style="margin-top:12px; font-size:15px;">When two Tier-1 sources conflict, the system does not collapse into false equivalence. It applies the Machloket Protocol to reach a defensible resolution — exactly as the Talmudic academies did when great scholars disagreed.</p>
+        <p style="margin-top:10px; font-size:17px;">The 28-Facet Friction Protocol is named for the twenty-four objections Reish Lakish raised. Challenges do not come from the model itself — they come from the documented record of real counter-arguments, exactly as Reish Lakish's objections came from his own rigorous legal knowledge, not from deference.</p>
+        <p style="margin-top:12px; font-size:17px;">When two Tier-1 sources conflict, the system does not collapse into false equivalence. It applies the Machloket Protocol to reach a defensible resolution — exactly as the Talmudic academies did when great scholars disagreed.</p>
         <p class="mach-verdict">28 FACETS · RWI SCORING · LEX PRIOR · CHAZAKAH · BY-ZOMBIES AUDIT</p>
       </div>
     </div>
@@ -699,32 +712,32 @@ p.lead { font-family:var(--serif); font-size:20px; font-style:italic; color:var(
       <span class="mlabel">The Four-Layer Architecture</span>
       <div class="teal-rule"></div>
       <h2 style="font-size:30px; max-width:640px; margin-bottom:8px;">A claim passes through four distinct layers before a verdict issues.</h2>
-      <p style="max-width:640px; margin-bottom:0; font-size:15px; color:var(--stone-muted);">Most fact-checking systems operate in the present. HevrutAI situates every claim in its historical lineage — and forces it to survive adversarial challenge before adjudication.</p>
+      <p style="max-width:640px; margin-bottom:0; font-size:17px; color:var(--stone-muted);">Most fact-checking systems operate in the present. HevrutAI situates every claim in its historical lineage — and forces it to survive adversarial challenge before adjudication.</p>
     </div>
     <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--stone-warm); margin:0 60px 60px;">
       <div style="background:var(--stone-dark); padding:36px 32px; border-top:2px solid var(--teal);">
-        <p style="font-family:var(--mono); font-size:9px; color:var(--teal); letter-spacing:0.2em; margin-bottom:12px;">LAYER 1</p>
+        <p style="font-family:var(--mono); font-size:11px; color:var(--teal); letter-spacing:0.2em; margin-bottom:12px;">LAYER 1</p>
         <h4 style="font-size:17px; margin-bottom:10px; color:var(--stone-pale);">Narrative Integrity Scan</h4>
-        <p style="font-size:14px; margin-bottom:14px;">Not a verdict — a structural examination. Before any claim is judged true or false, it is examined for how it is built. What kind of claim is this? Are actors identified or deliberately foggy? Is chronology intact?</p>
-        <p style="font-family:var(--mono); font-size:10px; color:var(--teal); opacity:0.6; letter-spacing:0.08em;">BY-ZOMBIES PASSIVE AUDIT</p>
+        <p style="font-size:16px; margin-bottom:14px;">Not a verdict — a structural examination. Before any claim is judged true or false, it is examined for how it is built. What kind of claim is this? Are actors identified or deliberately foggy? Is chronology intact?</p>
+        <p style="font-family:var(--mono); font-size:12px; color:var(--teal); opacity:0.6; letter-spacing:0.08em;">BY-ZOMBIES PASSIVE AUDIT</p>
       </div>
       <div style="background:var(--stone-dark); padding:36px 32px; border-top:2px solid var(--teal);">
-        <p style="font-family:var(--mono); font-size:9px; color:var(--teal); letter-spacing:0.2em; margin-bottom:12px;">LAYER 2</p>
+        <p style="font-family:var(--mono); font-size:11px; color:var(--teal); letter-spacing:0.2em; margin-bottom:12px;">LAYER 2</p>
         <h4 style="font-size:17px; margin-bottom:10px; color:var(--stone-pale);">Machloket Protocol</h4>
-        <p style="font-size:14px; margin-bottom:14px;">Does not ask whether a claim is structured correctly. Asks whether it can survive serious opposition. 28 structured adversarial objections. No claim passes without challenge.</p>
-        <p style="font-family:var(--mono); font-size:10px; color:var(--teal); opacity:0.6; letter-spacing:0.08em;">28-FACET FRICTION PROTOCOL</p>
+        <p style="font-size:16px; margin-bottom:14px;">Does not ask whether a claim is structured correctly. Asks whether it can survive serious opposition. 28 structured adversarial objections. No claim passes without challenge.</p>
+        <p style="font-family:var(--mono); font-size:12px; color:var(--teal); opacity:0.6; letter-spacing:0.08em;">28-FACET FRICTION PROTOCOL</p>
       </div>
       <div style="background:var(--stone-dark); padding:36px 32px; border-top:2px solid var(--gold);">
-        <p style="font-family:var(--mono); font-size:9px; color:var(--gold); letter-spacing:0.2em; margin-bottom:12px;">LAYER 3</p>
+        <p style="font-family:var(--mono); font-size:11px; color:var(--gold); letter-spacing:0.2em; margin-bottom:12px;">LAYER 3</p>
         <h4 style="font-size:17px; margin-bottom:10px; color:var(--stone-pale);">Historical Continuity Analysis</h4>
-        <p style="font-size:14px; margin-bottom:14px;">The layer that separates HevrutAI from every other fact-checking system. Most systems operate only in the present. HevrutAI situates every claim in its historical lineage. Has this pattern appeared before?</p>
-        <p style="font-family:var(--mono); font-size:10px; color:var(--gold); opacity:0.6; letter-spacing:0.08em;">LEX PRIOR · CHAZAKAH PRINCIPLE</p>
+        <p style="font-size:16px; margin-bottom:14px;">The layer that separates HevrutAI from every other fact-checking system. Most systems operate only in the present. HevrutAI situates every claim in its historical lineage. Has this pattern appeared before?</p>
+        <p style="font-family:var(--mono); font-size:12px; color:var(--gold); opacity:0.6; letter-spacing:0.08em;">LEX PRIOR · CHAZAKAH PRINCIPLE</p>
       </div>
       <div style="background:var(--stone-dark); padding:36px 32px; border-top:2px solid var(--stone-surface);">
-        <p style="font-family:var(--mono); font-size:9px; color:var(--stone-muted); letter-spacing:0.2em; margin-bottom:12px;">LAYER 4</p>
+        <p style="font-family:var(--mono); font-size:11px; color:var(--stone-muted); letter-spacing:0.2em; margin-bottom:12px;">LAYER 4</p>
         <h4 style="font-size:17px; margin-bottom:10px; color:var(--stone-pale);">Adjudication Engine</h4>
-        <p style="font-size:14px; margin-bottom:14px;">Only after Layers 1–3 have run does a verdict issue. The verdict is not binary — it reflects the full weight of the forensic process. Human review required before archive entry.</p>
-        <p style="font-family:var(--mono); font-size:10px; color:var(--stone-muted); opacity:0.6; letter-spacing:0.08em;">HUMAN APPROVAL · PERMANENT RECORD</p>
+        <p style="font-size:16px; margin-bottom:14px;">Only after Layers 1–3 have run does a verdict issue. The verdict is not binary — it reflects the full weight of the forensic process. Human review required before archive entry.</p>
+        <p style="font-family:var(--mono); font-size:12px; color:var(--stone-muted); opacity:0.75; letter-spacing:0.08em;">HUMAN APPROVAL · PERMANENT RECORD</p>
       </div>
     </div>
   </section>
@@ -824,7 +837,7 @@ p.lead { font-family:var(--serif); font-size:20px; font-style:italic; color:var(
     <div style="background:var(--stone-dark); padding:52px 48px; position:relative; border-top:3px solid var(--teal);">
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;">
         <div>
-          <span style="font-family:var(--mono); font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--teal); display:block; margin-bottom:8px;">Flagship Workshop</span>
+          <span style="font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--teal); display:block; margin-bottom:8px;">Flagship Workshop</span>
           <h3 style="font-size:28px; margin-bottom:16px; color:var(--stone-pale);">Thinking in the Age of AI</h3>
           <p style="margin-bottom:16px; font-size:16px; line-height:1.75;">This is not actually an AI workshop. It is a thinking workshop disguised as an AI workshop — and it remains valuable even if AI disappears tomorrow.</p>
           <p style="margin-bottom:16px;">Built around the Reish Lakish principle and the Hevruta learning model, it teaches participants to interrogate information rather than react to it. The core shift: from asking "Is this true?" to asking "What survives pressure?"</p>
@@ -833,22 +846,22 @@ p.lead { font-family:var(--serif); font-size:20px; font-style:italic; color:var(
         </div>
         <div>
           <div style="background:var(--stone-deep); padding:32px; border-left:1px solid var(--stone-warm);">
-            <p style="font-family:var(--mono); font-size:9px; color:var(--teal); letter-spacing:0.15em; margin-bottom:20px;">OFFERING DETAILS</p>
+            <p style="font-family:var(--mono); font-size:11px; color:var(--teal); letter-spacing:0.15em; margin-bottom:20px;">OFFERING DETAILS</p>
             <div style="margin-bottom:20px;">
               <p style="font-size:11px; color:var(--stone-muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px;">Audiences</p>
-              <p style="font-size:14px; line-height:1.7;">Synagogues · Federations · Day Schools · Hillels · Community Organizations · Educators</p>
+              <p style="font-size:16px; line-height:1.7;">Synagogues · Federations · Day Schools · Hillels · Community Organizations · Educators</p>
             </div>
             <div style="margin-bottom:20px;">
               <p style="font-size:11px; color:var(--stone-muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px;">Format Options</p>
-              <p style="font-size:14px; line-height:1.7;">60 minutes · 75 minutes · 90 minutes<br>Teen version · Educator/Admin version<br>Jewish community version with live inserts</p>
+              <p style="font-size:16px; line-height:1.7;">60 minutes · 75 minutes · 90 minutes<br>Teen version · Educator/Admin version<br>Jewish community version with live inserts</p>
             </div>
             <div style="margin-bottom:20px;">
               <p style="font-size:11px; color:var(--stone-muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px;">Learning Outcomes</p>
-              <p style="font-size:14px; line-height:1.7;">Hevruta as a thinking model · Sycophancy awareness · Narrative Gap analysis · ORIGIN/GAP/FRAME/INTENT framework · The RESTORE step · Level 1 and Level 2 protocol</p>
+              <p style="font-size:16px; line-height:1.7;">Hevruta as a thinking model · Sycophancy awareness · Narrative Gap analysis · ORIGIN/GAP/FRAME/INTENT framework · The RESTORE step · Level 1 and Level 2 protocol</p>
             </div>
             <div>
               <p style="font-size:11px; color:var(--stone-muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px;">Status</p>
-              <p style="font-size:14px; color:var(--teal);">Available now · Delivered live</p>
+              <p style="font-size:16px; color:var(--teal);">Available now · Delivered live</p>
             </div>
           </div>
         </div>
@@ -861,7 +874,7 @@ p.lead { font-family:var(--serif); font-size:20px; font-style:italic; color:var(
     <div style="background:var(--stone-dark); padding:52px 48px; position:relative; border-top:3px solid var(--gold);">
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;">
         <div>
-          <span style="font-family:var(--mono); font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:8px;">Jewish Learning Experience</span>
+          <span style="font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:8px;">Jewish Learning Experience</span>
           <h3 style="font-size:28px; margin-bottom:16px; color:var(--stone-pale);">Tablets to Tablets</h3>
           <p style="margin-bottom:16px; font-size:16px; line-height:1.75;">This is not a workshop in the same category as <em>Thinking in the Age of AI</em>. It is a Jewish learning experience — seasonal, contemplative, and rooted in the question of how Jews carry truth across generations.</p>
           <p style="margin-bottom:16px;">From Sinai to the smartphone. From stone tablets to digital ones. The transmission never stops — but each generation must decide how to carry it. Facilitated hevruta discussion with a visual sourcebook participants take home.</p>
@@ -870,26 +883,26 @@ p.lead { font-family:var(--serif); font-size:20px; font-style:italic; color:var(
             <a href="mailto:hevrutai.org@gmail.com?subject=Tablets to Tablets — Booking Inquiry" class="btn-t" style="font-size:11px; padding:14px 28px;">Book This Experience</a>
             <a href="mailto:hevrutai.org@gmail.com?subject=Tablets to Tablets PDF" class="btn-g" style="font-size:11px; padding:14px 28px;">Download PDF — $36</a>
           </div>
-          <p style="margin-top:14px; font-size:13px; color:var(--stone-surface); font-style:italic;">$36 = double chai. Priced with intention.</p>
+          <p style="margin-top:14px; font-size:17px; color:var(--stone-surface); font-style:italic;">$36 = double chai. Priced with intention.</p>
         </div>
         <div>
           <div style="background:var(--stone-deep); padding:32px; border-left:1px solid var(--stone-warm);">
-            <p style="font-family:var(--mono); font-size:9px; color:var(--gold); letter-spacing:0.15em; margin-bottom:20px;">OFFERING DETAILS</p>
+            <p style="font-family:var(--mono); font-size:11px; color:var(--gold); letter-spacing:0.15em; margin-bottom:20px;">OFFERING DETAILS</p>
             <div style="margin-bottom:20px;">
               <p style="font-size:11px; color:var(--stone-muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px;">Audiences</p>
-              <p style="font-size:14px; line-height:1.7;">Adult Education · Synagogues · Scholar-in-Residence Programs · Retreats · Shavuot Programming · Havurot</p>
+              <p style="font-size:16px; line-height:1.7;">Adult Education · Synagogues · Scholar-in-Residence Programs · Retreats · Shavuot Programming · Havurot</p>
             </div>
             <div style="margin-bottom:20px;">
               <p style="font-size:11px; color:var(--stone-muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px;">Format Options</p>
-              <p style="font-size:14px; line-height:1.7;">30–45 minutes · In-person or virtual<br>Sourcebook included for all participants<br>PDF available for independent study</p>
+              <p style="font-size:16px; line-height:1.7;">30–45 minutes · In-person or virtual<br>Sourcebook included for all participants<br>PDF available for independent study</p>
             </div>
             <div style="margin-bottom:20px;">
               <p style="font-size:11px; color:var(--stone-muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px;">Learning Outcomes</p>
-              <p style="font-size:14px; line-height:1.7;">Jewish transmission across generations · Hevruta as sacred practice · Truth, memory, and technology · The obligation to carry what we receive</p>
+              <p style="font-size:16px; line-height:1.7;">Jewish transmission across generations · Hevruta as sacred practice · Truth, memory, and technology · The obligation to carry what we receive</p>
             </div>
             <div>
               <p style="font-size:11px; color:var(--stone-muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px;">Status</p>
-              <p style="font-size:14px; color:var(--teal);">Available now · Bookable year-round · Ideal for Shavuot</p>
+              <p style="font-size:16px; color:var(--teal);">Available now · Bookable year-round · Ideal for Shavuot</p>
             </div>
           </div>
         </div>
@@ -901,7 +914,7 @@ p.lead { font-family:var(--serif); font-size:20px; font-style:italic; color:var(
     <div style="background:var(--stone-dark); padding:52px 48px; position:relative; border-top:3px solid var(--stone-surface);">
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;">
         <div>
-          <span style="font-family:var(--mono); font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--stone-muted); display:block; margin-bottom:8px;">Keynote Presentation</span>
+          <span style="font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--stone-muted); display:block; margin-bottom:8px;">Keynote Presentation</span>
           <h3 style="font-size:28px; margin-bottom:16px; color:var(--stone-pale);">The Path Forward</h3>
           <p style="margin-bottom:16px; font-size:16px; line-height:1.75;">This is not training. It is a keynote — built for rooms where the question is not "what happened" but "what now."</p>
           <p style="margin-bottom:16px;">Beginning with personal testimony — Shoah memory, family legacy, a woman who chose to wear her Magen David before the storm — the presentation moves through October 7 and what it revealed about the fragility communities mistook for safety. It closes with a blueprint: stop explaining, start witnessing. Stop reacting, start guiding. Teach Judaism as a civilization, a people, a story, an obligation.</p>
@@ -911,22 +924,22 @@ p.lead { font-family:var(--serif); font-size:20px; font-style:italic; color:var(
         </div>
         <div>
           <div style="background:var(--stone-deep); padding:32px; border-left:1px solid var(--stone-warm);">
-            <p style="font-family:var(--mono); font-size:9px; color:var(--stone-muted); letter-spacing:0.15em; margin-bottom:20px;">OFFERING DETAILS</p>
+            <p style="font-family:var(--mono); font-size:11px; color:var(--stone-muted); letter-spacing:0.15em; margin-bottom:20px;">OFFERING DETAILS</p>
             <div style="margin-bottom:20px;">
               <p style="font-size:11px; color:var(--stone-muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px;">Audiences</p>
-              <p style="font-size:14px; line-height:1.7;">Conferences · Jewish Leadership Gatherings · Community Organizations · Funders · Strategic Conversations · Boards</p>
+              <p style="font-size:16px; line-height:1.7;">Conferences · Jewish Leadership Gatherings · Community Organizations · Funders · Strategic Conversations · Boards</p>
             </div>
             <div style="margin-bottom:20px;">
               <p style="font-size:11px; color:var(--stone-muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px;">Format</p>
-              <p style="font-size:14px; line-height:1.7;">45–60 minutes · Keynote format<br>Q&A available · Panel-ready</p>
+              <p style="font-size:16px; line-height:1.7;">45–60 minutes · Keynote format<br>Q&A available · Panel-ready</p>
             </div>
             <div style="margin-bottom:20px;">
               <p style="font-size:11px; color:var(--stone-muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px;">Core Themes</p>
-              <p style="font-size:14px; line-height:1.7;">Bearing witness to October 7 · What the moment revealed · Stop explaining, start witnessing · Judaism as civilization · AI as hevruta, not replacement · Blueprint for endurance</p>
+              <p style="font-size:16px; line-height:1.7;">Bearing witness to October 7 · What the moment revealed · Stop explaining, start witnessing · Judaism as civilization · AI as hevruta, not replacement · Blueprint for endurance</p>
             </div>
             <div>
               <p style="font-size:11px; color:var(--stone-muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px;">Status</p>
-              <p style="font-size:14px; color:var(--gold);">Available by inquiry</p>
+              <p style="font-size:16px; color:var(--gold);">Available by inquiry</p>
             </div>
           </div>
         </div>
@@ -1080,16 +1093,16 @@ p.lead { font-family:var(--serif); font-size:20px; font-style:italic; color:var(
     <div class="about-side">
       <p class="aside-quote">"I never thought I would live to see another generation of Jews."</p>
       <p class="aside-cite">— NACHUM LEWIN</p>
-      <p style="margin-top:28px; font-size:15px; line-height:1.8;">HevrutAI is built in the shadow of testimony. The family story that grounds this project is preserved in the USC Shoah Foundation archive.</p>
-      <p style="margin-top:14px; font-size:15px; line-height:1.8;">The chain almost broke. And held. That survival is the reason this work exists — and the reason the obligation of testimony is not completed by recording it, but by defending it.</p>
+      <p style="margin-top:28px; font-size:17px; line-height:1.8;">HevrutAI is built in the shadow of testimony. The family story that grounds this project is preserved in the USC Shoah Foundation archive.</p>
+      <p style="margin-top:14px; font-size:17px; line-height:1.8;">The chain almost broke. And held. That survival is the reason this work exists — and the reason the obligation of testimony is not completed by recording it, but by defending it.</p>
       <p style="margin-top:14px; font-family:var(--serif); font-size:17px; font-style:italic; color:var(--teal); line-height:1.6; opacity:0.85;">Every AI-generated distortion of Jewish history is a small act of erasure. The Machloket Protocol is the response.</p>
       <div style="margin-top:28px; margin-bottom:36px;">
         <img src="images/bio.png" alt="Stacy La Mell, founder of HevrutAI" style="width:100%; display:block; border:1px solid var(--stone-warm);">
       </div>
       <div style="padding-top:32px; border-top:1px solid var(--stone-warm);">
         <span class="mlabel" style="display:block; margin-bottom:16px;">Contact</span>
-        <p style="font-size:13px; font-family:var(--mono); color:var(--stone-muted);">hevrutai.org@gmail.com</p>
-        <p style="font-size:13px; font-family:var(--mono); color:var(--stone-muted); margin-top:8px;">@hevrutai on Instagram</p>
+        <p style="font-size:15px; font-family:var(--mono); color:var(--stone-muted);">hevrutai.org@gmail.com</p>
+        <p style="font-size:15px; font-family:var(--mono); color:var(--stone-muted); margin-top:8px;">@hevrutai on Instagram</p>
         <a href="mailto:hevrutai.org@gmail.com" class="btn-t" style="margin-top:28px; display:inline-block; font-size:11px; padding:14px 28px;">Get in Touch</a>
       </div>
     </div>
@@ -1123,7 +1136,7 @@ p.lead { font-family:var(--serif); font-size:20px; font-style:italic; color:var(
 
   <section class="memory-hero">
     <span class="glabel" style="position:relative;z-index:1;">Holocaust Memory Project</span>
-    <div style="width:40px;height:1px;background:var(--gold);opacity:0.4;margin:16px auto;position:relative;z-index:1;"></div>
+    <div style="width:40px;height:1px;background:var(--gold);opacity:0.6;margin:16px auto;position:relative;z-index:1;"></div>
     <h1 style="position:relative;z-index:1;">The chain almost broke.</h1>
     <p class="lead">It held. And that survival — and the obligation it creates — is the reason HevrutAI exists.</p>
   </section>
@@ -1145,7 +1158,7 @@ p.lead { font-family:var(--serif); font-size:20px; font-style:italic; color:var(
         <img src="images/family.jpg" alt="Nachum Lewin, Max Lewin, and Shmuel Uchin — Germany, postwar" style="width:100%; height:100%; object-fit:cover; object-position:top; filter:sepia(0.2) contrast(1.1);">
       </div>
       <p class="mem-cap">Germany, postwar. From right to left: Nachum Lewin, Max Lewin, and Shmuel Uchin, reunited after surviving the Shoah.</p>
-      <p class="mem-cap" style="margin-top:8px; opacity:0.45;">Stacy is named after Shmuel ("Sam") according to Jewish naming tradition.</p>
+      <p class="mem-cap" style="margin-top:8px; opacity:0.65;">Stacy is named after Shmuel ("Sam") according to Jewish naming tradition.</p>
     </div>
     <div class="mem-text">
       <span class="glabel">Living Testimony</span>
@@ -1178,7 +1191,7 @@ p.lead { font-family:var(--serif); font-size:20px; font-style:italic; color:var(
     <div class="footer-bottom" style="border:none; padding:0;">
       <p>© 2025 HevrutAI™ · All rights reserved.</p>
       <p class="footer-tag">links don't have to shine. they just have to hold.</p>
-      <p class="footer-tag" style="color:#ffffff; font-size:13px; margin-top:8px;">Part of the <a href="https://tevai.org" target="_blank" style="color:#00C9B1; text-decoration:underline; font-weight:600;">TevAI</a> ecosystem — regenerative intelligence infrastructure.</p>
+      <p class="footer-tag" style="color:#ffffff; font-size:17px; margin-top:8px;">Part of the <a href="https://tevai.org" target="_blank" style="color:#00C9B1; text-decoration:underline; font-weight:600;">TevAI</a> ecosystem — regenerative intelligence infrastructure.</p>
     </div>
   </footer>
 </div>
