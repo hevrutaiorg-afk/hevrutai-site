@@ -10,15 +10,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
   <style>
-    /* ── TOKENS ── */
     :root {
       --bg:       #0F0F0F;
-      --surface:  #1A1A1A;
-      --border:   #2A2A2A;
-      --text:     #E8E4DC;
-      --muted:    #888880;
-      --teal:     #00C9B1;
-      --gold:     #C8974A;
+      --surface:  #1E1E1E;
+      --surface2: #252525;
+      --border:   #3A3A3A;
+      --text:     #F0EDE6;
+      --text-mid: #C8C4BC;
+      --muted:    #9A9690;
+      --teal:     #00D4BB;
+      --teal-dim: rgba(0,212,187,0.1);
+      --gold:     #D4A44C;
+      --gold-dim: rgba(212,164,76,0.12);
       --mono:     'IBM Plex Mono', monospace;
       --serif:    'Cormorant Garamond', serif;
       --display:  'Cinzel', serif;
@@ -30,8 +33,8 @@
       background: var(--bg);
       color: var(--text);
       font-family: var(--mono);
-      font-size: 13px;
-      line-height: 1.6;
+      font-size: 14px;
+      line-height: 1.65;
       min-height: 100vh;
     }
 
@@ -39,7 +42,7 @@
     .site-header {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
-      padding: 18px 32px;
+      padding: 18px 36px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -53,33 +56,33 @@
     }
 
     .logo-mark {
-      width: 34px;
-      height: 34px;
+      width: 36px; height: 36px;
       border: 2px solid var(--teal);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 16px;
+      font-size: 18px;
       color: var(--teal);
       font-family: var(--display);
       flex-shrink: 0;
     }
 
     .logo-text { font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text); }
-    .logo-sub  { font-size: 9px;  letter-spacing: 0.2em;  text-transform: uppercase; color: var(--muted); }
+    .logo-sub  { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
 
     .status-badge {
       display: flex;
       align-items: center;
       gap: 8px;
-      font-size: 9px;
-      letter-spacing: 0.2em;
+      font-size: 10px;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--teal);
+      font-weight: 700;
     }
 
     .status-dot {
-      width: 6px; height: 6px;
+      width: 7px; height: 7px;
       border-radius: 50%;
       background: var(--teal);
       animation: pulse 2s infinite;
@@ -87,12 +90,7 @@
 
     @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
-    /* ── NAV ── */
-    .site-nav {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-    }
+    .site-nav { display: flex; gap: 28px; align-items: center; }
 
     .site-nav a {
       font-size: 10px;
@@ -107,145 +105,152 @@
 
     /* ── MAIN ── */
     main {
-      max-width: 680px;
+      max-width: 700px;
       margin: 0 auto;
-      padding: 56px 24px 100px;
+      padding: 60px 28px 100px;
     }
 
-    /* ── TYPOGRAPHY ── */
+    /* ── PAGE HEADER ── */
     .eyebrow {
-      font-size: 9px;
-      letter-spacing: 0.3em;
+      font-size: 10px;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
       color: var(--teal);
       margin-bottom: 14px;
+      font-weight: 700;
     }
 
     .page-title {
       font-family: var(--display);
-      font-size: clamp(26px, 5vw, 36px);
+      font-size: clamp(28px, 5vw, 40px);
       font-weight: 700;
       color: var(--text);
       line-height: 1.15;
       letter-spacing: 0.02em;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     .page-subtitle {
       font-family: var(--serif);
-      font-size: 18px;
+      font-size: 19px;
       font-style: italic;
-      color: var(--muted);
-      line-height: 1.7;
-      margin-bottom: 32px;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 36px;
+      border-left: 3px solid var(--teal);
+      padding-left: 18px;
     }
 
-    /* ── HOW IT WORKS BOX ── */
+    /* ── HOW IT WORKS ── */
     .process-box {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-left: 3px solid var(--teal);
-      padding: 22px 24px;
-      margin-bottom: 40px;
+      border-top: 3px solid var(--teal);
+      padding: 24px 28px;
+      margin-bottom: 44px;
     }
 
-    .process-box .box-label {
+    .box-label {
       font-size: 9px;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
       color: var(--teal);
-      margin-bottom: 14px;
+      font-weight: 700;
+      margin-bottom: 16px;
     }
 
-    .process-steps {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+    .process-steps { display: flex; flex-direction: column; gap: 12px; }
 
     .process-step {
       display: flex;
-      gap: 14px;
+      gap: 16px;
       align-items: flex-start;
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.5;
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.55;
     }
 
     .step-num {
       font-size: 9px;
       letter-spacing: 0.15em;
       color: var(--teal);
+      font-weight: 700;
       white-space: nowrap;
-      padding-top: 2px;
+      padding-top: 3px;
       flex-shrink: 0;
+      min-width: 76px;
     }
 
-    /* ── DIVIDERS ── */
+    /* ── STAGE DIVIDERS ── */
     .stage-divider {
       position: relative;
       height: 1px;
       background: var(--border);
-      margin: 36px 0 28px;
+      margin: 40px 0 30px;
     }
 
     .stage-label {
       position: absolute;
-      top: -8px;
+      top: -9px;
       left: 0;
       font-size: 9px;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
       color: var(--gold);
+      font-weight: 700;
       background: var(--bg);
-      padding-right: 14px;
+      padding-right: 16px;
     }
 
     /* ── FIELDS ── */
-    .field { margin-bottom: 26px; }
+    .field { margin-bottom: 28px; }
 
     label {
       display: block;
-      font-size: 9px;
-      letter-spacing: 0.22em;
+      font-size: 10px;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 8px;
+      font-weight: 700;
+      margin-bottom: 9px;
     }
 
     label .req { color: var(--teal); margin-left: 4px; }
-    label .opt { color: var(--muted); font-size: 8px; margin-left: 6px; letter-spacing: 0.1em; }
+    label .opt { color: var(--muted); font-size: 9px; margin-left: 6px; letter-spacing: 0.1em; font-weight: 400; }
 
     input[type="url"],
     input[type="text"],
     textarea,
     select {
       width: 100%;
-      background: var(--surface);
+      background: var(--surface2);
       border: 1px solid var(--border);
       color: var(--text);
       font-family: var(--mono);
-      font-size: 13px;
-      padding: 12px 16px;
+      font-size: 14px;
+      padding: 13px 16px;
       outline: none;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, box-shadow 0.2s;
       appearance: none;
+      -webkit-appearance: none;
     }
 
     textarea {
       font-family: var(--serif);
-      font-size: 16px;
+      font-size: 18px;
       resize: vertical;
-      min-height: 110px;
-      line-height: 1.6;
+      min-height: 120px;
+      line-height: 1.7;
+      color: var(--text);
     }
 
     input:focus, textarea:focus, select:focus {
       border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(0,212,187,0.1);
     }
 
     input::placeholder, textarea::placeholder {
-      color: #555550;
+      color: var(--muted);
     }
 
     .select-wrap { position: relative; }
@@ -258,92 +263,91 @@
       transform: translateY(-50%);
       color: var(--teal);
       pointer-events: none;
-      font-size: 12px;
+      font-size: 13px;
     }
 
-    select option { background: #1A1A1A; }
+    select option { background: var(--surface2); color: var(--text); }
 
     .hint {
-      font-size: 10px;
+      font-size: 11px;
       color: var(--muted);
-      margin-top: 7px;
-      line-height: 1.5;
-      letter-spacing: 0.02em;
+      margin-top: 8px;
+      line-height: 1.55;
     }
 
-    .char-count { color: var(--muted); }
+    .char-count { color: var(--text-mid); font-weight: 700; }
 
     /* ── SUBMIT ── */
-    .submit-area { margin-top: 44px; }
+    .submit-area { margin-top: 48px; }
 
     .submit-btn {
       width: 100%;
       background: var(--teal);
-      color: var(--bg);
+      color: #0F0F0F;
       border: none;
       font-family: var(--mono);
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      padding: 18px 24px;
+      padding: 20px 24px;
       cursor: pointer;
-      transition: opacity 0.2s, background 0.2s;
+      transition: opacity 0.2s;
     }
 
-    .submit-btn:hover { opacity: 0.88; }
-    .submit-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+    .submit-btn:hover:not(:disabled) { opacity: 0.88; }
+    .submit-btn:disabled { opacity: 0.3; cursor: not-allowed; }
 
     .submit-note {
       text-align: center;
-      font-size: 10px;
+      font-size: 11px;
       color: var(--muted);
-      margin-top: 12px;
+      margin-top: 10px;
     }
 
     .review-note {
-      margin-top: 16px;
-      padding: 14px 18px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      font-size: 10px;
-      color: var(--muted);
-      line-height: 1.7;
-      letter-spacing: 0.02em;
+      margin-top: 18px;
+      padding: 16px 20px;
+      background: var(--gold-dim);
+      border: 1px solid rgba(212,164,76,0.3);
+      font-size: 12px;
+      color: var(--text-mid);
+      line-height: 1.75;
     }
 
     /* ── SUCCESS ── */
     #success-screen {
       display: none;
       text-align: center;
-      padding: 60px 0;
+      padding: 72px 0;
     }
 
     .success-icon {
-      width: 64px; height: 64px;
+      width: 68px; height: 68px;
       border: 2px solid var(--teal);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto 24px;
-      font-size: 26px;
+      font-size: 28px;
       color: var(--teal);
+      background: var(--teal-dim);
     }
 
     .success-title {
       font-family: var(--display);
-      font-size: 24px;
+      font-size: 26px;
       color: var(--text);
       margin-bottom: 12px;
     }
 
     .success-sub {
       font-family: var(--serif);
-      font-size: 18px;
+      font-size: 19px;
       font-style: italic;
-      color: var(--muted);
-      line-height: 1.7;
+      color: var(--text-mid);
+      line-height: 1.75;
       margin-bottom: 28px;
     }
 
@@ -351,38 +355,29 @@
       display: inline-block;
       background: var(--surface);
       border: 1px solid var(--border);
-      padding: 10px 24px;
-      font-size: 10px;
+      padding: 11px 28px;
+      font-size: 11px;
       letter-spacing: 0.2em;
       color: var(--gold);
-      margin-bottom: 28px;
+      font-weight: 700;
+      margin-bottom: 32px;
     }
 
     .next-steps-box {
-      display: inline-block;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-left: 3px solid var(--teal);
-      padding: 22px 28px;
-      margin-bottom: 32px;
+      border-top: 3px solid var(--teal);
+      padding: 24px 28px;
+      margin: 0 auto 32px;
       text-align: left;
-      max-width: 440px;
-      width: 100%;
-    }
-
-    .next-steps-box .box-label {
-      font-size: 9px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 14px;
+      max-width: 480px;
     }
 
     .next-steps-box p {
-      font-size: 12px;
-      color: var(--muted);
+      font-size: 13px;
+      color: var(--text-mid);
       line-height: 1.7;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .next-steps-box p:last-child { margin-bottom: 0; }
@@ -390,48 +385,48 @@
     .btn-ghost {
       display: inline-block;
       background: transparent;
-      border: 1px solid var(--teal);
+      border: 2px solid var(--teal);
       color: var(--teal);
       font-family: var(--mono);
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      padding: 13px 28px;
+      padding: 14px 32px;
       cursor: pointer;
       transition: background 0.2s;
       text-decoration: none;
     }
 
-    .btn-ghost:hover { background: rgba(0,201,177,0.08); }
+    .btn-ghost:hover { background: var(--teal-dim); }
 
     /* ── FOOTER ── */
     .site-footer {
-      margin-top: 64px;
+      margin-top: 72px;
       padding-top: 28px;
       border-top: 1px solid var(--border);
       text-align: center;
       font-size: 10px;
       color: var(--muted);
       letter-spacing: 0.12em;
-      line-height: 2.2;
+      line-height: 2.4;
     }
 
     .site-footer a { color: var(--muted); text-decoration: none; }
     .site-footer a:hover { color: var(--teal); }
-    .site-footer .tagline { color: var(--teal); font-style: italic; }
+    .site-footer .tagline { color: var(--teal); font-style: italic; font-family: var(--serif); font-size: 13px; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       .site-header { padding: 16px 20px; }
       .site-nav { display: none; }
       main { padding: 40px 20px 80px; }
+      .page-title { font-size: 26px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="site-header">
     <a href="/" class="logo">
       <div class="logo-mark">ℵ</div>
@@ -452,19 +447,18 @@
     </div>
   </header>
 
-  <!-- MAIN FORM -->
   <main>
     <div id="form-section">
 
       <div class="eyebrow">Opposition Library · Submission Portal</div>
       <h1 class="page-title">Submit a Claim.<br>Build the Record.</h1>
       <p class="page-subtitle">
-        HevrutAI accepts submissions of contested claims, AI-generated distortions, historical inversions,
-        and narrative manipulations for human-supervised review. High-quality submissions that pass review
-        become permanent documented cases in the Opposition Library.
+        HevrutAI accepts submissions of contested claims, AI-generated distortions,
+        historical inversions, and narrative manipulations for human-supervised review.
+        High-quality submissions that pass review become permanent documented cases
+        in the Opposition Library.
       </p>
 
-      <!-- HOW IT WORKS -->
       <div class="process-box">
         <div class="box-label">How submissions work</div>
         <div class="process-steps">
@@ -473,29 +467,28 @@
             <span>You describe the claim, where you found it, and what makes it worth investigating.</span>
           </div>
           <div class="process-step">
-            <span class="step-num">02 — REVIEW</span>
-            <span>Human reviewers evaluate whether the submission warrants a full case investigation.</span>
+            <span class="step-num">02 — RESEARCH</span>
+            <span>Your submission enters an automated research pipeline that traces origins, spread vectors, and historical precedent.</span>
           </div>
           <div class="process-step">
-            <span class="step-num">03 — INVESTIGATE</span>
-            <span>Approved cases are developed with primary sources, chronology, actor identification, and Machloket Protocol analysis.</span>
+            <span class="step-num">03 — REVIEW</span>
+            <span>A human reviewer evaluates the research and determines whether the case warrants full archive status.</span>
           </div>
           <div class="process-step">
             <span class="step-num">04 — ARCHIVE</span>
-            <span>Verified cases enter the Opposition Library as permanent public records.</span>
+            <span>Verified cases enter the Opposition Library as permanent, citable public records.</span>
           </div>
         </div>
       </div>
 
       <form id="submit-form" novalidate>
 
-        <!-- STAGE I -->
         <div class="stage-divider"><span class="stage-label">Stage I — The Source</span></div>
 
         <div class="field">
           <label for="url">URL or Source Link <span class="req">*</span></label>
           <input type="url" id="url" name="url" placeholder="https://" required />
-          <div class="hint">Direct link to the post, article, video, AI output, or document. Screenshot URL acceptable if original is deleted.</div>
+          <div class="hint">Direct link to the post, article, video, AI output, or document. A screenshot URL is acceptable if the original has been deleted.</div>
         </div>
 
         <div class="field">
@@ -519,7 +512,6 @@
           </div>
         </div>
 
-        <!-- STAGE II -->
         <div class="stage-divider"><span class="stage-label">Stage II — Claim Type</span></div>
 
         <div class="field">
@@ -538,10 +530,9 @@
               <option>Other / Unsure</option>
             </select>
           </div>
-          <div class="hint">Not sure? Select "Other / Unsure" — the review committee will classify it.</div>
+          <div class="hint">Not sure? Select "Other / Unsure" — the review team will classify it.</div>
         </div>
 
-        <!-- STAGE III -->
         <div class="stage-divider"><span class="stage-label">Stage III — Your Account</span></div>
 
         <div class="field">
@@ -551,31 +542,29 @@
         </div>
 
         <div class="field">
-          <label for="counter-source">Do you have a primary source that contradicts this claim? <span class="opt">(optional but valuable)</span></label>
+          <label for="counter-source">Primary source that contradicts this claim <span class="opt">(optional but valuable)</span></label>
           <input type="url" id="counter-source" name="counter-source" placeholder="https://" />
           <div class="hint">A link to an archived document, scholarly source, or primary record that directly contradicts the claim.</div>
         </div>
 
         <div class="field">
           <label for="context">Additional context <span class="opt">(optional)</span></label>
-          <textarea id="context" name="context" placeholder="Who posted it? What audience does it reach? Is it part of a larger pattern or campaign?" style="min-height:80px;"></textarea>
+          <textarea id="context" name="context" placeholder="Who posted it? What audience does it reach? Is this part of a larger pattern?" style="min-height: 88px;"></textarea>
         </div>
 
-        <!-- STAGE IV -->
         <div class="stage-divider"><span class="stage-label">Stage IV — Your Contribution</span></div>
 
         <div class="field">
-          <label for="handle">Your Name or Handle <span class="opt">(optional)</span></label>
+          <label for="handle">Your name or handle <span class="opt">(optional)</span></label>
           <input type="text" id="handle" name="handle" placeholder="@yourhandle or First Name" />
           <div class="hint">Anonymous submissions are accepted. Named contributors may be recognized for verified, high-quality submissions.</div>
         </div>
 
-        <!-- SUBMIT -->
         <div class="submit-area">
           <button type="submit" class="submit-btn" id="submit-btn" disabled>
             Submit to the Opposition Library →
           </button>
-          <div class="submit-note" id="submit-note">Complete required fields to submit</div>
+          <div class="submit-note" id="submit-note">Complete the required fields above to submit</div>
           <div class="review-note">
             All submissions enter a human review queue. Not every submission becomes a case —
             reviewers evaluate source quality, investigability, and evidentiary value.
@@ -586,27 +575,24 @@
       </form>
     </div>
 
-    <!-- SUCCESS -->
     <div id="success-screen">
       <div class="success-icon">✓</div>
       <div class="success-title">Submission Received</div>
       <div class="success-sub">
-        Your claim has entered the review queue.<br>
-        Human reviewers will evaluate it for case development.
+        Your claim has entered the research pipeline.<br>
+        A human reviewer will evaluate it for archive status.
       </div>
       <div class="case-id-box" id="case-id-display"></div>
       <br><br>
       <div class="next-steps-box">
         <div class="box-label">What happens next</div>
-        <p>Your submission will be reviewed by the HevrutAI team for source quality and investigability.</p>
-        <p>If selected for development, it will be investigated using primary sources, chronology analysis, and the full Machloket Protocol.</p>
-        <p>Approved cases enter the Opposition Library as permanent documented records.</p>
-        <p>Contributors who submit high-quality, verifiable claims may be recognized in the archive.</p>
+        <p>Your submission enters automated research: origin tracing, spread vector analysis, historical precedent mapping.</p>
+        <p>A human reviewer then evaluates the research and determines whether the case warrants full Opposition Library status.</p>
+        <p>Approved cases become permanent, citable public records. Contributors of high-quality submissions may be recognized in the archive.</p>
       </div>
       <button class="btn-ghost" onclick="resetForm()">Submit Another Claim</button>
     </div>
 
-    <!-- FOOTER -->
     <div class="site-footer">
       <a href="/">HevrutAI™</a> · Stacy La Mell ·
       <a href="mailto:hevrutai.org@gmail.com">hevrutai.org@gmail.com</a> ·
@@ -617,11 +603,7 @@
   </main>
 
   <script>
-    // ── CONFIG — your existing values stay here ──────────────────
-    const AIRTABLE_TOKEN   = "YOUR_TOKEN_HERE";
-    const AIRTABLE_BASE_ID = "YOUR_BASE_HERE";
-    const TABLE_NAME       = "Submissions";
-    // ─────────────────────────────────────────────────────────────
+    const TABLE_NAME = "Submissions";
 
     const generateCaseId = () => {
       const d = new Date();
@@ -632,14 +614,13 @@
 
     const caseId = generateCaseId();
 
-    // Field references
-    const descEl          = document.getElementById('description');
-    const charEl          = document.getElementById('char-count');
-    const urlEl           = document.getElementById('url');
-    const platEl          = document.getElementById('platform');
-    const claimTypeEl     = document.getElementById('claim-type');
-    const btn             = document.getElementById('submit-btn');
-    const noteEl          = document.getElementById('submit-note');
+    const descEl      = document.getElementById('description');
+    const charEl      = document.getElementById('char-count');
+    const urlEl       = document.getElementById('url');
+    const platEl      = document.getElementById('platform');
+    const claimTypeEl = document.getElementById('claim-type');
+    const btn         = document.getElementById('submit-btn');
+    const noteEl      = document.getElementById('submit-note');
 
     const validate = () => {
       const ok = urlEl.value.trim() &&
@@ -658,7 +639,6 @@
     [urlEl, platEl, claimTypeEl].forEach(el => el.addEventListener('change', validate));
     urlEl.addEventListener('input', validate);
 
-    // Form submit
     document.getElementById('submit-form').addEventListener('submit', async (e) => {
       e.preventDefault();
       btn.disabled = true;
@@ -680,19 +660,13 @@
       };
 
       try {
-        const res = await fetch(
-          `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(TABLE_NAME)}`,
-          {
-            method: 'POST',
-            headers: {
-              'Authorization': `Bearer ${AIRTABLE_TOKEN}`,
-              'Content-Type':  'application/json'
-            },
-            body: JSON.stringify(payload)
-          }
-        );
+        const res = await fetch('/api/submit-report', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
 
-        if (!res.ok) throw new Error('Airtable error');
+        if (!res.ok) throw new Error('Submission error');
 
         document.getElementById('form-section').style.display = 'none';
         document.getElementById('case-id-display').textContent = 'CASE ID: ' + caseId;
