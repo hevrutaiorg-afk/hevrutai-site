@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light">
+<title>AI Literacy for Jewish Organizations — HevrutAI</title>
+<meta name="description" content="Practical AI training for Jewish organizations and communal professionals. Staff workshops, half-day intensives, and implementation series by Stacy La Mell, founder of HevrutAI.">
+<link rel="canonical" href="https://hevrutai.org/ai-literacy">
+<meta property="og:title" content="AI Literacy for Jewish Organizations">
+<meta property="og:description" content="Practical AI training for the people responsible for Jewish education, communication, leadership, and trust.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hevrutai.org/ai-literacy">
+<meta property="og:image" content="https://hevrutai.org/images/ai-literacy-og.jpg">
+<meta property="og:image:alt" content="AI Literacy for Jewish Organizations by HevrutAI">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "AI Literacy for Jewish Organizations",
+  "provider": {
+    "@type": "Organization",
+    "name": "HevrutAI",
+    "url": "https://hevrutai.org"
+  },
+  "areaServed": "Worldwide",
+  "description": "Practical AI training for Jewish organizations and communal professionals.",
+  "offers": {
+    "@type": "Offer",
+    "name": "90-Minute Staff Workshop",
+    "price": "750",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    color-scheme: light only;
+    --paper:#FAF7F1;
+    --paper-deep:#F2EDE3;
+    --ink:#1B1813;
+    --ink-soft:#4A443B;
+    --teal:#0E7C7B;
+    --teal-bright:#12A5A3;
+    --gold:#B8963E;
+    --gold-text:#8A6F26;
+    --gold-soft:#E4D5AC;
+    --rule:#DDD3C0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Sans 3',system-ui,sans-serif;
+    font-size:1.075rem;
+    line-height:1.65;
+  }
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+  .eyebrow{
+    font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--teal);font-weight:600;
+  }
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:500;line-height:1.12}
+  h1{font-size:clamp(2.4rem,5.5vw,3.9rem);letter-spacing:-.01em}
+  h2{font-size:clamp(1.6rem,3.2vw,2.2rem);margin-bottom:1rem}
+  a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--teal-bright);outline-offset:3px;border-radius:2px}
+  .skip-link{
+    position:absolute;left:-9999px;top:0;background:var(--teal);color:#fff;
+    padding:10px 18px;z-index:100;text-decoration:none;font-weight:600;
+  }
+  .skip-link:focus{left:12px;top:12px}
+
+  /* top bar */
+  .topbar{border-bottom:1px solid var(--rule)}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:18px;padding-bottom:18px;gap:12px;flex-wrap:wrap}
+  .wordmark{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--ink);text-decoration:none}
+  .wordmark span{color:var(--teal)}
+  .topbar a.back{font-size:.9rem;color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--rule)}
+  .topbar a.back:hover{color:var(--teal)}
+
+  /* hero */
+  .hero{padding:84px 0 64px}
+  .hero .eyebrow{display:block;margin-bottom:18px}
+  .hero h1{max-width:16ch}
+  .hero .sub{
+    font-size:1.25rem;color:var(--ink-soft);max-width:46ch;margin-top:20px;
+  }
+  .positioning{
+    margin:36px 0 40px;padding-left:22px;border-left:3px solid var(--gold);
+    font-family:'Fraunces',serif;font-size:clamp(1.2rem,2.4vw,1.5rem);
+    font-style:italic;max-width:34ch;line-height:1.4;
+  }
+  .positioning em{font-style:italic;color:var(--teal);}
+  .btnrow{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{
+    display:inline-block;text-decoration:none;font-weight:600;font-size:1rem;
+    padding:14px 26px;border-radius:4px;transition:transform .12s ease, background .12s ease;
+  }
+  .btn:hover{transform:translateY(-1px)}
+  .btn.primary{background:var(--teal);color:var(--paper)}
+  .btn.primary:hover{background:var(--teal-bright)}
+  .btn.ghost{border:1.5px solid var(--ink);color:var(--ink)}
+  .btn.ghost:hover{border-color:var(--teal);color:var(--teal)}
+
+  /* who / problem band */
+  .band{background:var(--paper-deep);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:64px 0}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+  @media(max-width:800px){.cols{grid-template-columns:1fr}}
+  .orglist{list-style:none;margin-top:14px}
+  .orglist li{
+    padding:9px 0;border-bottom:1px solid var(--rule);font-weight:600;color:var(--ink-soft);
+  }
+  .orglist li::before{content:"·";color:var(--gold);font-weight:700;margin-right:10px}
+  .band p + p{margin-top:14px}
+  .band strong{color:var(--ink)}
+
+  /* offerings */
+  .offerings{padding:76px 0}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+  @media(max-width:860px){.cards{grid-template-columns:1fr}}
+  .card{
+    border:1px solid var(--rule);border-radius:6px;background:#fff;
+    padding:28px 26px;display:flex;flex-direction:column;
+  }
+  .card.flag{border-color:var(--teal);box-shadow:0 6px 24px rgba(14,124,123,.10)}
+  .card .fmt{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-text);font-weight:700;margin-bottom:10px}
+  .card h3{font-size:1.35rem;margin-bottom:8px}
+  .card .meta{font-size:.92rem;color:var(--ink-soft);margin-bottom:14px}
+  .card p{font-size:.98rem;color:var(--ink-soft);flex:1}
+  .card .price{font-family:'Fraunces',serif;font-size:1.5rem;margin-top:20px}
+  .card .price small{font-family:'Source Sans 3',sans-serif;font-size:.85rem;color:var(--ink-soft);display:block;font-weight:400}
+  .cards-foot{margin-top:22px;font-size:.92rem;color:var(--ink-soft);max-width:76ch}
+
+  /* chain */
+  .chain-sec{background:var(--paper-deep);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:72px 0}
+  .framework-note{font-size:.95rem;color:var(--ink-soft);margin-top:-8px;margin-bottom:8px}
+  .chain{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:40px 0 34px;position:relative}
+  .chain::before{
+    content:"";position:absolute;top:26px;left:12%;right:12%;height:2px;background:var(--gold);
+  }
+  .link{position:relative;text-align:center;padding:0 10px}
+  .link .node{
+    width:52px;height:52px;border-radius:50%;border:2px solid var(--gold);
+    background:var(--paper);margin:0 auto 14px;display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-size:1.25rem;color:var(--teal);position:relative;z-index:1;
+  }
+  .link h3{font-size:1.05rem;margin-bottom:6px}
+  .link p{font-size:.9rem;color:var(--ink-soft)}
+  @media(max-width:700px){
+    .chain{grid-template-columns:1fr;gap:26px}
+    .chain::before{display:none}
+  }
+  .leavewith{list-style:none;max-width:64ch}
+  .leavewith li{padding:10px 0 10px 26px;position:relative}
+  .leavewith li::before{content:"";position:absolute;left:0;top:19px;width:12px;height:2px;background:var(--teal)}
+
+  /* jewish-specific */
+  .jewish{padding:76px 0}
+  .jewish .inner{max-width:66ch}
+  .anchors{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}
+  @media(max-width:800px){.anchors{grid-template-columns:1fr}}
+  .anchor{border-top:2px solid var(--gold);padding-top:14px}
+  .anchor h3{font-size:1.1rem;margin-bottom:6px;color:var(--teal)}
+  .anchor p{font-size:.95rem;color:var(--ink-soft)}
+
+  /* why */
+  .why{background:var(--paper-deep);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:76px 0}
+  .why .inner{max-width:66ch}
+  .why p + p{margin-top:14px}
+  .sig{margin-top:26px;font-family:'Fraunces',serif;font-size:1.1rem}
+  .sig .name{color:var(--teal)}
+
+  /* faq */
+  .faq{padding:76px 0}
+  .faq .inner{max-width:70ch}
+  .faq details{border-bottom:1px solid var(--rule);padding:16px 0}
+  .faq summary{
+    font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;
+  }
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-family:'Fraunces',serif;color:var(--gold-text);font-size:1.3rem;line-height:1}
+  .faq details[open] summary::after{content:"–"}
+  .faq details p{margin-top:10px;color:var(--ink-soft);font-size:.98rem}
+
+  /* contact */
+  .contact{background:var(--paper-deep);border-top:1px solid var(--rule);padding:70px 0;text-align:center}
+  .contact h2{margin-bottom:14px}
+  .contact p{max-width:52ch;margin:0 auto 28px;color:var(--ink-soft)}
+  .contact-email{margin:18px auto 0 !important;font-size:1.05rem}
+  .contact-email a{color:var(--teal);text-decoration:none;border-bottom:1px solid var(--gold-soft);font-weight:600}
+  .contact-email a:hover{color:var(--teal-bright)}
+  .contact-note{font-size:.85rem !important;color:var(--ink-soft);margin:10px auto 0 !important;max-width:48ch}
+
+  /* dark footer */
+  footer{background:var(--ink);color:#A89F8F;padding:44px 0;font-size:.88rem}
+  footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+  footer a{color:#A89F8F;text-decoration:none;border-bottom:1px solid rgba(168,159,143,.4)}
+  footer a:hover{color:var(--gold-soft)}
+  footer .fm{font-family:'Fraunces',serif;font-size:1.05rem;color:#fff}
+  footer .fm span{color:var(--teal-bright)}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="wordmark" href="/" aria-label="HevrutAI home">Hevrut<span>AI</span></a>
+    <a class="back" href="/">Explore the wider HevrutAI project →</a>
+  </div>
+</div>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">HevrutAI · Professional Learning</span>
+    <h1>AI Literacy for Jewish Organizations</h1>
+    <p class="sub">Practical AI training for the people responsible for Jewish education, communication, leadership, and trust.</p>
+    <blockquote class="positioning">
+      I help Jewish communal professionals use AI without surrendering <em>accuracy</em>, <em>confidentiality</em>, <em>Jewish knowledge</em>, or <em>human responsibility</em>.
+    </blockquote>
+    <div class="btnrow">
+      <a class="btn primary" href="#workshop">Explore the Staff Workshop</a>
+      <a class="btn ghost" href="#contact">Schedule a Conversation</a>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap cols">
+    <div>
+      <span class="eyebrow">The Problem</span>
+      <h2>Your staff are already using AI.</h2>
+      <p>Unevenly, often without guidance, and sometimes without discussing it openly — while AI features arrive built into platforms your organization already uses.</p>
+      <p>These tools can fabricate quotations and sources in the same confident language they use for accurate information. They can distort Jewish history and text, expose confidential information, blur authorship, and create serious reputational risk.</p>
+      <p><strong>An organization that transmits Jewish knowledge cannot afford staff who can't tell fluent output from accurate output.</strong></p>
+    </div>
+    <div>
+      <span class="eyebrow">Designed For</span>
+      <h2>Jewish communal settings</h2>
+      <ul class="orglist">
+        <li>Synagogues</li>
+        <li>Day schools &amp; supplementary schools</li>
+        <li>Federations</li>
+        <li>JCCs</li>
+        <li>Camps &amp; youth organizations</li>
+        <li>Jewish nonprofits &amp; agencies</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="offerings" id="workshop">
+  <div class="wrap">
+    <span class="eyebrow">Formats</span>
+    <h2>Three ways to bring this to your staff</h2>
+    <div class="cards">
+      <div class="card flag">
+        <span class="fmt">90 minutes · virtual or on site</span>
+        <h3>Staff Workshop</h3>
+        <p class="meta">For a single staff team, department, or faculty</p>
+        <p>Live demonstrations of where these tools fail, a verification habit staff can apply immediately, and clear boundaries for what should not enter an unapproved AI system.</p>
+        <div class="price">$750<small>For one organizational team</small></div>
+      </div>
+      <div class="card">
+        <span class="fmt">3 hours · virtual or on site</span>
+        <h3>Half-Day Intensive</h3>
+        <p class="meta">For organization-wide professional development</p>
+        <p>Everything in the workshop, plus hands-on practice across real staff roles, departmental scenarios, privacy boundaries, and a facilitated first outline of the organization's staff guidance and unresolved policy questions.</p>
+        <div class="price">Starting at $1,800</div>
+      </div>
+      <div class="card">
+        <span class="fmt">3 sessions over 6 weeks · virtual-friendly</span>
+        <h3>Implementation Series</h3>
+        <p class="meta">For teams building lasting organizational practice</p>
+        <p>Shared staff guidance for approved uses, confidential information, and escalation; role-specific use cases; and standards for reviewing AI-assisted work — actual organizational outputs, not just learning.</p>
+        <div class="price">Starting at $3,500</div>
+      </div>
+    </div>
+    <p class="cards-foot">Designed for effective virtual or on-site delivery. Pricing includes a preparation call, organization-specific scenarios developed without requiring confidential information, and participant resources. Virtual delivery is available worldwide; on-site delivery and travel are quoted based on location. Final scope and pricing depend on audience size, customization, delivery requirements, and organizational goals.</p>
+  </div>
+</section>
+
+<section class="chain-sec">
+  <div class="wrap">
+    <span class="eyebrow">The Method</span>
+    <h2>A verification habit staff can use immediately</h2>
+    <p class="framework-note">A four-part HevrutAI verification framework</p>
+    <div class="chain">
+      <div class="link">
+        <div class="node">א</div>
+        <h3>Source</h3>
+        <p>Where did this claim come from — and can I inspect the original?</p>
+      </div>
+      <div class="link">
+        <div class="node">ב</div>
+        <h3>Accuracy</h3>
+        <p>Does the source actually support what this output says?</p>
+      </div>
+      <div class="link">
+        <div class="node">ג</div>
+        <h3>Challenge</h3>
+        <p>What evidence, context, or opposing interpretation is missing?</p>
+      </div>
+      <div class="link">
+        <div class="node">ד</div>
+        <h3>Responsibility</h3>
+        <p>Am I prepared to put my name — and my institution's — on it?</p>
+      </div>
+    </div>
+    <ul class="leavewith">
+      <li>A clear picture of what these tools actually do — and why fluent, confident-sounding output is not necessarily accurate</li>
+      <li>Live demonstrations of the failures that matter in Jewish communal work: invented sources, distorted Jewish history, false attribution, and uncritical agreement</li>
+      <li>A Jewish framework throughout — attribution, interpretation, and responsibility for what we transmit</li>
+      <li>A one-page reference card staff use long after the session ends</li>
+    </ul>
+  </div>
+</section>
+
+<section class="jewish">
+  <div class="wrap inner">
+    <span class="eyebrow">The Difference</span>
+    <h2>Why a Jewish-specific training?</h2>
+    <p>Jewish communal work depends on accurate attribution, responsible interpretation, inherited memory, and trust between people and institutions. AI disrupts each of those practices. This training uses Jewish texts and learning traditions not as decoration, but as working tools for source integrity, disagreement, transmission, and human accountability.</p>
+    <div class="anchors">
+      <div class="anchor">
+        <h3>Attribution</h3>
+        <p>Repeating teachings in the name of their source — the discipline that keeps transmission trustworthy.</p>
+      </div>
+      <div class="anchor">
+        <h3>Humility</h3>
+        <p>Learning to say "I do not know" — the discipline these tools were never taught.</p>
+      </div>
+      <div class="anchor">
+        <h3>Machloket</h3>
+        <p>Disagreement as a discipline rather than automatic affirmation — what Jewish learning asks of a partner.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap inner">
+    <span class="eyebrow">Why This Training</span>
+    <h2>Built by a working Jewish communal professional</h2>
+    <p>This training comes from daily practice, not abstract observation. I use these tools in my own work running teen engagement, leadership training, and family programming — and I've spent more than a year building with them hands-on: websites, workflows, research systems, and educational tools.</p>
+    <p>I founded HevrutAI, an independent Jewish AI-literacy and verification initiative, and my writing and educational work examine Jewish life, technology, memory, and information integrity. I translate between the AI world and the Jewish communal world because I live in both.</p>
+    <p class="sig"><span class="name">Stacy La Mell</span> · Founder, HevrutAI</p>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap inner">
+    <span class="eyebrow">Common Questions</span>
+    <h2>Before you ask</h2>
+    <details>
+      <summary>Do participants need AI experience?</summary>
+      <p>No. The workshop is designed for mixed-comfort staff teams — from daily users to people who have never opened one of these tools.</p>
+    </details>
+    <details>
+      <summary>Which AI tools are covered?</summary>
+      <p>The training focuses on transferable judgment rather than promoting one platform. Demonstrations may include widely used tools and AI features already present in organizational software.</p>
+    </details>
+    <details>
+      <summary>Do we need an existing AI policy?</summary>
+      <p>No. The 90-minute workshop can help identify what the organization needs to clarify next. The half-day and implementation series support deeper organizational guidance.</p>
+    </details>
+    <details>
+      <summary>Is this legal, cybersecurity, or compliance advice?</summary>
+      <p>No. The training helps staff develop sound judgment and identify questions that should be escalated. Organizations should involve their own legal, IT, security, HR, and policy professionals where appropriate.</p>
+    </details>
+    <details>
+      <summary>Will we have to share confidential materials?</summary>
+      <p>No. Scenarios can reflect your work without requiring confidential constituent, donor, student, personnel, or pastoral information.</p>
+    </details>
+    <details>
+      <summary>Can this be delivered virtually?</summary>
+      <p>Yes. The virtual workshop is designed as a fully interactive format — polls, chat exercises, and paired investigation — not a reduced version of the on-site session.</p>
+    </details>
+    <details>
+      <summary>How many participants does standard pricing cover?</summary>
+      <p>Standard workshop pricing is designed for one organizational team. Larger multi-agency or conference audiences are quoted separately.</p>
+    </details>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="eyebrow">Next Step</span>
+    <h2>A 20-minute conversation</h2>
+    <p>Tell me what your teams are running into, and I'll shape a session around your actual pain points — no generic slide decks.</p>
+    <a class="btn primary" href="mailto:hevrutai.org@gmail.com?subject=AI%20Literacy%20Training%20Inquiry">Start a Conversation</a>
+    <p class="contact-email">
+      <a href="mailto:hevrutai.org@gmail.com">hevrutai.org@gmail.com</a>
+    </p>
+    <p class="contact-note">Please do not include confidential organizational or constituent information in your initial inquiry.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fm">Hevrut<span>AI</span></div>
+    <div>Practical AI literacy grounded in Jewish responsibility, source integrity, and human judgment. <a href="/">Explore the wider HevrutAI project →</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
