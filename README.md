@@ -22,17 +22,17 @@ The first release is a paste-first evidence workspace. It does not fetch article
 
 ## AI activation and limits
 
-`/api/analyze` supports direct Gemini, an OpenAI-compatible provider, or the original HevrutAI Supabase `vindicate` function. The existing Supabase anonymous publishable configuration is reused; it is not a provider secret or service-role credential. Environment variables can override it. Provider secrets stay server-side.
+`/api/analyze` supports direct Gemini, an OpenAI-compatible provider, or the original HevrutAI Supabase `audit` function. The existing Supabase anonymous publishable configuration is reused; it is not a provider secret or service-role credential. Environment variables can override it. Provider secrets stay server-side.
 
 The connection indicator distinguishes configuration from availability. Only a successful POST confirms a live result. The UI never substitutes sample data when the provider is unavailable. AI requests require an explicit visitor consent checkbox and click. Analysis is limited to supplied text and supplied source passages. AI output must include all 28 facets, exact input passages, known source IDs, and evidence for factual standings. These validation rules constrain outputs but do not prove that the model correctly interprets the evidence. A human must examine every finding.
 
-The legacy backend has an older wrapping protocol and may return output that fails the new contract. If so, the request fails visibly. Prefer a direct provider or deploy an updated Supabase function once its authorized management connection is available. Do not weaken output validation to make the old response appear successful.
+The legacy backend returns a fixed tool envelope. The adapter asks for the evidence-bounded report as JSON inside its text output field, validates that report, and discards the legacy numerical scores. A live transport test returned all 28 facets with evidence-deficient standing in about 17 seconds. If a response fails the new contract, the request fails visibly; never weaken output validation to make an old response appear successful.
 
 The per-instance request counter is a modest throttle, not a durable abuse-control system. Before broad, paid AI launch, configure provider budget caps and a persistent rate limiter/authentication appropriate to the audience. The local evidence workspace can operate without AI.
 
 ## Hosting and validation
 
-The repository is already associated with the existing Vercel website. Static files require no build. Vercel serves the `api/` functions; `api/analyze.js` allows 60 seconds. Run `npm test` and `npm run check`. No third-party runtime dependencies are required.
+The repository is already associated with the existing Vercel website. Static files require no build. Vercel serves the `api/` functions; `api/analyze.js` allows 120 seconds. Run `npm test` and `npm run check`. No third-party runtime dependencies are required.
 
 Automated tests cover protocol stability, passive attribution, contextual treatment of quoted hate, unresolved findings, import sanitization, unsafe links, timeline ordering, fabricated AI passages/references, incomplete facets, origin enforcement, outages, and validated provider transport using fixtures. Fixture tests do not establish live AI availability. Browser visual QA was unavailable in the authoring environment.
 
