@@ -34,8 +34,16 @@ export default async function handler(req,res) {
    if(response.ok){const d=await response.json();raw=d.choices?.[0]?.message?.content;}
   } else {
    const url=new URL(legacyUrl);if(url.protocol!=='https:'||!url.hostname.endsWith('.supabase.co'))throw new Error('Invalid AI configuration.');
-   response=await fetch(url.origin+'/functions/v1/audit',{method:'POST',headers:{'Content-Type':'application/json',apikey:legacyKey,Authorization:'Bearer '+legacyKey},body:JSON.stringify({query:prompt+'\nIn your required forensic_audit_result tool call, put the complete JSON report above as a JSON string in the vindicated_output field. The sycophancy and integrity numbers are not used as evidence. Keep the review concise.',mode:'forensic'}),signal:AbortSignal.timeout(115000)});
-   if(response.ok){const d=await response.json();raw=d.vindicated_output;}
+   let repair='';
+   for(let attempt=0;attempt<2;attempt++) {
+    response=await fetch(url.origin+'/functions/v1/audit',{method:'POST',headers:{'Content-Type':'application/json',apikey:legacyKey,Authorization:'Bearer '+legacyKey},body:JSON.stringify({query:prompt+'\nOUTPUT TRANSPORT: In your required forensic_audit_result tool call, set vindicated_output to a JSON STRING containing the complete required report object above. Do not put prose in that field. Do not put the report in any other field. The envelope’s numerical scores are discarded, not used as evidence. Keep the review concise.'+repair,mode:'forensic'}),signal:AbortSignal.timeout(70000)});
+    if(!response.ok)break;
+    const d=await response.json();raw=d.vindicated_output;
+    try{return res.status(200).json({result:parseModel(raw||'',input)});}catch(e){
+     if(attempt===1)throw e;
+     repair='\nFORMAT REPAIR: The preceding response was rejected: '+e.message+'. Regenerate the required report from the original supplied record. Return 28 unique facets. If no evidence passages are supplied, use only Evidence deficient or Context review for claims and empty sourceIds. No invented quotes, evidence IDs, or definitive factual standings. The vindicated_output field MUST begin with { and end with } and contain valid JSON, not ordinary prose.';
+    }
+   }
   }
   if(!response.ok)return res.status(response.status===429?429:502).json({error:'The AI service is unavailable. Your case is intact; try again later.'});
   const result=parseModel(raw||'',input);return res.status(200).json({result});
